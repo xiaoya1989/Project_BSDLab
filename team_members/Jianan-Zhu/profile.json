@@ -1,0 +1,17 @@
+{
+  "name": "Jianan Zhu",
+  "name_cn": "朱嘉楠",
+  "role": "Master Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2024,
+  "graduation_year": 2027,
+  "email": "1491775287@qq.com",
+  "keywords": ["Neural Oscillations", "Arithmetic", "EEG"],
+  "bio_short": "A Master student investigating how neural oscillatory states modulate arithmetic performance using EEG data.",
+  "bio_long": " My work focuses on time-frequency analysis and neural dynamics underlying cognitive processing. I am particularly interested in how ongoing brain states influence behavioral accuracy in mathematical tasks, and in developing interventions such as neurofeedback to enhance arithmetic performance.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/Elena-1225"
+  }
+}

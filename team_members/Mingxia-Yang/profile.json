@@ -1,0 +1,17 @@
+{
+  "name": "Mingxia Yang",
+  "name_cn": "杨铭霞",
+  "role": "Master Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2023,
+  "graduation_year": 2026,
+  "email": "hoohooyang8@gmail.com",
+  "keywords": ["Replay", "Episodic Memory", "fMRI"],
+  "bio_short": "Master’s student in neuroscience studying fMRI-based replay mechanisms in episodic memory.",
+  "bio_long": "I study how the brain replays and reconstructs episodic memories using fMRI. My research explores temporal dynamics of neural representations and replay processes. Beyond research, I enjoy street dance, reading feminist literature, and offering psychological support.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "xing1007"
+  }
+}

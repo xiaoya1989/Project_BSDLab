@@ -1,0 +1,17 @@
+{
+  "name": "Wei Song",
+  "name_cn": "宋伟",
+  "role": "Master's Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2023,
+  "graduation_year": 2026,
+  "email": "waynesongg@gmail.com",
+  "keywords": ["Neural Oscillations", "CCEP", "iEEG"],
+  "bio_short": "Cognitive neuroscience graduate student.",
+  "bio_long": "Wei is a master's student in cognitive neuroscience, focusing on the neural mechanisms of information transmission in the human brain. His research combines stereotactic intracranial EEG (sEEG) and cortico-cortical evoked potentials (CCEP) to investigate large-scale brain network dynamics from a causal intervention perspective.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": ""
+  }
+}

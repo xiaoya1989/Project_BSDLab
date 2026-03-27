@@ -1,0 +1,23 @@
+{
+  "name": "Yitong Zeng",
+  "name_cn": "曾奕彤",
+  "role": "Master's Student",
+  "program": "Fundamental Psychology",
+  "enrollment_year": 2023,
+  "graduation_year": 2026,
+  "email": "yitongzeng29@gmail.com",
+  "keywords": [
+    "Neural Oscillations",
+    "Time Perception",
+    "EEG",
+    "iEEG",
+    "Motor Timing"
+  ],
+  "bio_short": "Researching neural oscillations and their role in time perception and motor timing.",
+  "bio_long": "Yitong Zeng is a Master's student in Fundamental Psychology at South China Normal University. Her research focuses on the role of neural oscillations, particularly beta frequency dynamics, in subjective time perception and motor timing. She has experience with EEG, iEEG, and non-invasive brain stimulation (tACS), combining electrophysiology and behavioral approaches to investigate timing mechanisms in the human brain.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": ""
+  }
+}

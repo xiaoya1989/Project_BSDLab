@@ -1,0 +1,351 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">BSD Lab - Brain State Dynamics</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="5">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="6">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet" vid="7">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="8"></script>
+    <script vid="9">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#f5f1e9',
+                        white: '#fbfaf6',
+                        slate: '#eeeeee',
+                        sage: '#bcb99a',
+                        mustard: '#d4b06d',
+                        terracotta: '#d3916d',
+                        olive: '#62532e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        serif: ['Newsreader', 'Times New Roman', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px rgba(98, 83, 46, 0.04), 0 1px 3px rgba(98, 83, 46, 0.02)',
+                        'hover': '0 20px 50px rgba(98, 83, 46, 0.08), 0 2px 5px rgba(98, 83, 46, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style vid="10">
+        body {
+            background-color: #f5f1e9;
+            color: #62532e;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        
+        @keyframes flowLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes flowRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .wave-path {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .wave-slow {
+            animation: flowLeft 24s linear infinite;
+            stroke: #bcb99a;
+            stroke-width: 8;
+            opacity: 0.8;
+        }
+
+        .wave-mid {
+            animation: flowRight 18s linear infinite;
+            stroke: #d4b06d;
+            stroke-width: 5;
+            opacity: 0.9;
+        }
+
+        .wave-fast {
+            animation: flowLeft 14s linear infinite;
+            stroke: #d3916d;
+            stroke-width: 3;
+            opacity: 1;
+        }
+
+        .wave-highlight {
+            animation: flowRight 20s linear infinite;
+            stroke: #62532e;
+            stroke-width: 1;
+            opacity: 0.6;
+        }
+
+        .brain-outline {
+            fill: none;
+            stroke: #62532e;
+            stroke-width: 0.5;
+            opacity: 0.2;
+        }
+
+        
+        .bg-wave {
+            position: absolute;
+            width: 200vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #d3916d;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="relative w-full min-h-screen" vid="11">
+
+    
+    <svg class="bg-wave top-0 left-0" viewBox="0 0 1000 500" preserveAspectRatio="none" vid="12">
+        <path d="M0,250 C250,150 500,350 750,250 C1000,150 1250,350 1500,250 L1500,0 L0,0 Z" fill="#fbfaf6" opacity="0.5" vid="13"></path>
+    </svg>
+    <svg class="bg-wave bottom-0 left-[-50vw] rotate-180" viewBox="0 0 1000 500" preserveAspectRatio="none" vid="14">
+        <path d="M0,250 C250,350 500,150 750,250 C1000,350 1250,150 1500,250 L1500,0 L0,0 Z" fill="none" stroke="#bcb99a" stroke-width="1" opacity="0.2" vid="15"></path>
+    </svg>
+
+    
+    <nav class="fixed w-full top-0 z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm bg-cream/80 border-b border-sage/10" vid="16">
+        <div class="flex items-center gap-3" vid="17">
+            <svg class="w-8 h-8 mix-blend-multiply" viewBox="0 0 200 200" vid="18">
+                <defs vid="19">
+                    <clipPath id="nav-brain-mask" vid="20">
+                        <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="21"></path>
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#nav-brain-mask)" vid="22">
+                    <path class="wave-path wave-slow" d="M-200,100 Q-150,40 -100,100 T0,100 T100,100 T200,100 T300,100 T400,100" vid="23"></path>
+                    <path class="wave-path wave-mid" d="M-200,120 Q-175,70 -150,120 T-50,120 T50,120 T150,120 T250,120 T350,120 T450,120" vid="24"></path>
+                    <path class="wave-path wave-fast" d="M-200,80 Q-180,50 -160,80 T-80,80 T0,80 T80,80 T160,80 T240,80 T320,80 T400,80" vid="25"></path>
+                </g>
+                <path class="brain-outline" d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="26"></path>
+            </svg>
+            <span class="font-sans font-semibold text-olive tracking-tight text-lg" vid="27">BSD Lab</span>
+        </div>
+        
+        <div class="hidden md:flex gap-10 text-sm font-medium tracking-wide" vid="28">
+            <a href="#research" class="nav-link text-olive/80 hover:text-olive transition-colors" vid="29">Research</a>
+            <a href="#publications" class="nav-link text-olive/80 hover:text-olive transition-colors" vid="30">Publications</a>
+            <a href="#team" class="nav-link text-olive/80 hover:text-olive transition-colors" vid="31">Team</a>
+            <a href="#contact" class="nav-link text-olive/80 hover:text-olive transition-colors" vid="32">Contact</a>
+        </div>
+
+        <button class="md:hidden text-olive" vid="33">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="34"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" vid="35"></path></svg>
+        </button>
+    </nav>
+
+    
+    <main class="w-full max-w-[1440px] mx-auto px-8 lg:px-24 pt-40 pb-20 flex flex-col lg:flex-row items-center justify-between min-h-screen gap-16" vid="36">
+        
+        
+        <div class="w-full lg:w-1/2 flex flex-col gap-6 z-10" vid="37">
+            <div class="flex items-center gap-4 mb-2" vid="38">
+                <div class="h-[1px] w-12 bg-terracotta" vid="39"></div>
+                <span class="text-xs uppercase tracking-[0.2em] text-terracotta font-semibold" vid="40">Neurology Research</span>
+            </div>
+            
+            <h1 class="text-6xl lg:text-7xl font-sans font-semibold text-olive tracking-tighter leading-tight" vid="41">
+                BSD Lab
+            </h1>
+            <h2 class="text-3xl lg:text-4xl font-serif italic text-sage font-light mt-[-1rem]" vid="42">
+                Brain State Dynamics
+            </h2>
+            
+            <p class="text-olive/80 text-lg lg:text-xl font-light leading-relaxed max-w-xl mt-4" vid="43">
+                Exploring the intricate neural dynamics underlying human consciousness, perception, and pioneering the next generation of advanced Brain-Computer Interfaces.
+            </p>
+            
+            <div class="flex gap-4 mt-8" vid="44">
+                <a href="#research" class="px-8 py-4 bg-olive text-white rounded-full font-medium text-sm hover:bg-olive/90 transition-colors shadow-soft hover:shadow-hover" vid="45">
+                    Explore Research
+                </a>
+                <a href="#publications" class="px-8 py-4 border border-olive/20 text-olive rounded-full font-medium text-sm hover:border-olive/50 hover:bg-olive/5 transition-all" vid="46">
+                    Latest Papers
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end relative" vid="47">
+            <div class="absolute inset-0 bg-white/40 blur-3xl rounded-full transform scale-150 z-0" vid="48"></div>
+            <svg class="w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] mix-blend-multiply z-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" vid="49">
+                <defs vid="50">
+                    <clipPath id="hero-brain-mask" vid="51">
+                        <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="52"></path>
+                    </clipPath>
+                    
+                    <radialGradient id="brain-glow" cx="50%" cy="50%" r="50%" vid="53">
+                        <stop offset="0%" stop-color="#fbfaf6" stop-opacity="0.8" vid="54"></stop>
+                        <stop offset="100%" stop-color="#f5f1e9" stop-opacity="0" vid="55"></stop>
+                    </radialGradient>
+                </defs>
+
+                <circle cx="100" cy="100" r="80" fill="url(#brain-glow)" vid="56"></circle>
+
+                <g clip-path="url(#hero-brain-mask)" vid="57">
+                    <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" fill="#eeeeee" opacity="0.3" vid="58"></path>
+                    <path class="wave-path wave-slow" d="M-200,100 Q-150,40 -100,100 T0,100 T100,100 T200,100 T300,100 T400,100" vid="59"></path>
+                    <path class="wave-path wave-mid" d="M-200,120 Q-175,70 -150,120 T-50,120 T50,120 T150,120 T250,120 T350,120 T450,120" vid="60"></path>
+                    <path class="wave-path wave-fast" d="M-200,80 Q-180,50 -160,80 T-80,80 T0,80 T80,80 T160,80 T240,80 T320,80 T400,80" vid="61"></path>
+                    <path class="wave-path wave-highlight" d="M-200,90 Q-160,20 -120,90 T-40,90 T40,90 T120,90 T200,90 T280,90 T360,90 T440,90" vid="62"></path>
+                </g>
+                <path class="brain-outline" d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" stroke-width="1" vid="63"></path>
+            </svg>
+        </div>
+    </main>
+
+    
+    <section id="research" class="w-full max-w-[1440px] mx-auto px-8 lg:px-24 py-32 relative" vid="64">
+        <div class="text-center mb-20" vid="65">
+            <h3 class="text-4xl font-serif italic text-olive mb-4" vid="66">Research Focus</h3>
+            <p class="text-olive/70 font-light max-w-2xl mx-auto" vid="67">Our multi-disciplinary approach bridges neuroscience, computational modeling, and engineering.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" vid="68">
+            
+            
+            <div class="bg-white rounded-3xl p-10 shadow-soft hover:shadow-hover transition-all duration-300 group relative overflow-hidden flex flex-col h-full border border-sage/10" vid="69">
+                
+                <svg class="absolute -right-10 -bottom-10 w-48 h-48 opacity-[0.03] group-hover:opacity-10 transition-opacity" viewBox="0 0 100 100" vid="70">
+                    <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#d4b06d" stroke-width="4" vid="71"></path>
+                </svg>
+                
+                <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center mb-8 text-mustard" vid="72">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="73"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" vid="74"></path></svg>
+                </div>
+                <h4 class="text-xl font-semibold text-olive mb-4" vid="75">Neural Dynamics of Consciousness</h4>
+                <p class="text-olive/70 text-sm leading-relaxed font-light mb-8 flex-grow" vid="76">
+                    Investigating the spatio-temporal signatures of conscious vs. unconscious states using high-density EEG and intracranial recordings.
+                </p>
+                <a href="#" class="text-terracotta text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all mt-auto w-max" vid="77">
+                    Read more 
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="78"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" vid="79"></path></svg>
+                </a>
+            </div>
+
+            
+            <div class="bg-white rounded-3xl p-10 shadow-soft hover:shadow-hover transition-all duration-300 group relative overflow-hidden flex flex-col h-full border border-sage/10" vid="80">
+                <svg class="absolute -right-10 -bottom-10 w-48 h-48 opacity-[0.03] group-hover:opacity-10 transition-opacity" viewBox="0 0 100 100" vid="81">
+                    <path d="M0,50 Q25,80 50,50 T100,50" fill="none" stroke="#bcb99a" stroke-width="4" vid="82"></path>
+                </svg>
+
+                <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center mb-8 text-sage" vid="83">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="84"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" vid="85"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" vid="86"></path></svg>
+                </div>
+                <h4 class="text-xl font-semibold text-olive mb-4" vid="87">Perception &amp; Encoding</h4>
+                <p class="text-olive/70 text-sm leading-relaxed font-light mb-8 flex-grow" vid="88">
+                    Understanding how the brain compresses and encodes complex sensory streams into discrete perceptual moments via oscillating traveling waves.
+                </p>
+                <a href="#" class="text-terracotta text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all mt-auto w-max" vid="89">
+                    Read more 
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="90"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" vid="91"></path></svg>
+                </a>
+            </div>
+
+            
+            <div class="bg-white rounded-3xl p-10 shadow-soft hover:shadow-hover transition-all duration-300 group relative overflow-hidden flex flex-col h-full border border-sage/10" vid="92">
+                <svg class="absolute -right-10 -bottom-10 w-48 h-48 opacity-[0.03] group-hover:opacity-10 transition-opacity" viewBox="0 0 100 100" vid="93">
+                    <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#d3916d" stroke-width="4" vid="94"></path>
+                </svg>
+
+                <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center mb-8 text-terracotta" vid="95">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="96"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" vid="97"></path></svg>
+                </div>
+                <h4 class="text-xl font-semibold text-olive mb-4" vid="98">Brain-Computer Interfaces</h4>
+                <p class="text-olive/70 text-sm leading-relaxed font-light mb-8 flex-grow" vid="99">
+                    Developing closed-loop BCI paradigms that read state dynamics in real-time to augment cognitive control and restore lost functions.
+                </p>
+                <a href="#" class="text-terracotta text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all mt-auto w-max" vid="100">
+                    Read more 
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" vid="101"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" vid="102"></path></svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section class="w-full bg-white border-y border-sage/20 py-16" vid="103">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-24 flex flex-wrap justify-around items-center gap-10" vid="104">
+            <div class="text-center" vid="105">
+                <p class="text-4xl font-serif text-mustard mb-2" vid="106">12</p>
+                <p class="text-xs uppercase tracking-widest text-olive/60 font-semibold" vid="107">Active Projects</p>
+            </div>
+            <div class="hidden md:block w-px h-12 bg-sage/30" vid="108"></div>
+            <div class="text-center" vid="109">
+                <p class="text-4xl font-serif text-terracotta mb-2" vid="110">40+</p>
+                <p class="text-xs uppercase tracking-widest text-olive/60 font-semibold" vid="111">Publications</p>
+            </div>
+            <div class="hidden md:block w-px h-12 bg-sage/30" vid="112"></div>
+            <div class="text-center" vid="113">
+                <p class="text-4xl font-serif text-sage mb-2" vid="114">R01</p>
+                <p class="text-xs uppercase tracking-widest text-olive/60 font-semibold" vid="115">NIH Funded</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="w-full max-w-[1440px] mx-auto px-8 lg:px-24 py-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-olive/60 text-sm font-light" vid="116">
+        
+        <div class="flex items-center gap-4" vid="117">
+            <svg class="w-10 h-10 mix-blend-multiply opacity-50" viewBox="0 0 200 200" vid="118">
+                <defs vid="119">
+                    <clipPath id="footer-brain-mask" vid="120">
+                        <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="121"></path>
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#footer-brain-mask)" vid="122">
+                    <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" fill="#eeeeee" opacity="0.3" vid="123"></path>
+                    <path class="wave-path wave-slow" d="M-200,100 Q-150,40 -100,100 T0,100 T100,100 T200,100 T300,100 T400,100" vid="124"></path>
+                    <path class="wave-path wave-highlight" d="M-200,90 Q-160,20 -120,90 T-40,90 T40,90 T120,90 T200,90 T280,90 T360,90 T440,90" vid="125"></path>
+                </g>
+                <path class="brain-outline" d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="126"></path>
+            </svg>
+            <div vid="127">
+                <p class="font-semibold text-olive" vid="128">BSD Lab</p>
+                <p vid="129">University Research Center</p>
+            </div>
+        </div>
+
+        <div class="flex gap-8" vid="130">
+            <a href="#" class="hover:text-olive transition-colors" vid="131">Data Portal</a>
+            <a href="#" class="hover:text-olive transition-colors" vid="132">Join the Lab</a>
+            <a href="#" class="hover:text-olive transition-colors" vid="133">Contact</a>
+        </div>
+        
+        <div class="text-xs text-olive/40" vid="134">
+            © 2024 Brain State Dynamics Lab. All rights reserved.
+        </div>
+    </footer>
+
+
+</body></html>

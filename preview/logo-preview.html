@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSD Lab Logo Preview</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --surface-dark: #020817;
+      --border: #e2e8f0;
+      --border-dark: #1e293b;
+      --ink: #0f172a;
+      --muted: #475569;
+      --muted-dark: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Geist, "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(148,163,184,0.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      color: var(--ink);
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 40px 0 72px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 5vw, 4.8rem);
+      letter-spacing: -0.06em;
+    }
+
+    p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+    }
+
+    .panel.dark {
+      background: var(--surface-dark);
+      border-color: var(--border-dark);
+      color: white;
+    }
+
+    .panel.soft {
+      background: var(--surface-alt);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 0.92rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .panel.dark h2 {
+      color: var(--muted-dark);
+    }
+
+    .showcase {
+      min-height: 220px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(248,250,252,0.86);
+    }
+
+    .panel.dark .showcase {
+      background: #0b1120;
+      border-color: #1e293b;
+    }
+
+    .row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 16px;
+      align-items: end;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .size-item {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .panel.dark .size-item {
+      color: var(--muted-dark);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wide img { width: min(100%, 560px); }
+    .stack img { width: min(100%, 280px); }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <h1>BSD Lab Identity Preview</h1>
+      <p>
+        Revised toward a shadcn-like visual language: flatter surfaces, monochrome hierarchy, no orbit dots,
+        and a cleaner continuous trajectory motif for brain-state flow and closed-loop control.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Container vs Raw Symbol</h2>
+        <div class="showcase">
+          <div class="row">
+            <img src="../assets/logo/bsd-mark.svg" alt="BSD Lab container mark" style="width:180px;">
+            <img src="../assets/logo/bsd-mark-raw.svg" alt="BSD Lab raw symbol" style="width:180px;">
+          </div>
+        </div>
+      </article>
+
+      <article class="panel dark">
+        <h2>Dark Surface</h2>
+        <div class="showcase">
+          <div class="row">
+            <img src="../assets/logo/bsd-mark-dark.svg" alt="BSD Lab dark container mark" style="width:180px;">
+            <img src="../assets/logo/bsd-mark-raw-dark.svg" alt="BSD Lab dark raw symbol" style="width:180px;">
+          </div>
+        </div>
+      </article>
+
+      <article class="panel soft wide" style="grid-column: 1 / -1;">
+        <h2>Primary Horizontal Lockup</h2>
+        <div class="showcase">
+          <img src="../assets/logo/bsd-lockup-horizontal.svg" alt="BSD Lab horizontal logo">
+        </div>
+      </article>
+
+      <article class="panel dark wide" style="grid-column: 1 / -1;">
+        <h2>Horizontal Lockup / Dark</h2>
+        <div class="showcase">
+          <img src="../assets/logo/bsd-lockup-horizontal-dark.svg" alt="BSD Lab horizontal dark logo">
+        </div>
+      </article>
+
+      <article class="panel stack">
+        <h2>Stacked Lockup</h2>
+        <div class="showcase">
+          <img src="../assets/logo/bsd-lockup-stacked.svg" alt="BSD Lab stacked logo">
+        </div>
+      </article>
+
+      <article class="panel dark stack">
+        <h2>Stacked / Dark</h2>
+        <div class="showcase">
+          <img src="../assets/logo/bsd-lockup-stacked-dark.svg" alt="BSD Lab stacked dark logo">
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Favicon Scale Check</h2>
+        <div class="showcase">
+          <div class="sizes">
+            <div class="size-item">
+              <img src="../assets/logo/bsd-mark.svg" alt="24px icon" style="width:24px;height:24px;">
+              <span>24px</span>
+            </div>
+            <div class="size-item">
+              <img src="../assets/logo/bsd-mark.svg" alt="32px icon" style="width:32px;height:32px;">
+              <span>32px</span>
+            </div>
+            <div class="size-item">
+              <img src="../assets/logo/bsd-mark.svg" alt="48px icon" style="width:48px;height:48px;">
+              <span>48px</span>
+            </div>
+            <div class="size-item">
+              <img src="../assets/logo/bsd-mark.svg" alt="128px icon" style="width:128px;height:128px;">
+              <span>128px</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Monochrome</h2>
+        <div class="showcase">
+          <img src="../assets/logo/bsd-lockup-horizontal-mono.svg" alt="BSD Lab monochrome horizontal logo">
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

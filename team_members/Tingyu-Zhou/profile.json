@@ -1,0 +1,17 @@
+{
+"name": "Tingyu Zhou",
+  "name_cn": "周廷玉",
+  "role": "Master Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2025,
+  "graduation_year": 2028,
+  "email": "2892378846@qq.com",
+  "keywords": [ "Emotional Music", "SEEG","oscillatory activity"],
+  "bio_short": "Master student using SEEG to study emotional processing in music.",
+  "bio_long": "I am a postgraduate student in Neuroscience focusing on how the human brain processes emotional music. My research uses SEEG recordings combined with time-frequency analysis and Fourier-based methods to investigate neural dynamics. I am particularly interested in oscillatory activity, especially in the gamma band, and its role in emotional processing.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/ztingy"
+  }
+}

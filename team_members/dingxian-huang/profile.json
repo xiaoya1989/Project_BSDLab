@@ -1,0 +1,17 @@
+{
+  "name": "Dingxian Huang",
+  "name_cn": "黄定贤",
+  "role": "Postgraduate Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2023,
+  "graduation_year": 2026,
+  "email": "hdxstart2023@hotmail.com",
+  "keywords": ["Neural Oscillations", "Perception", "EEG"],
+  "bio_short": "Studying neural oscillations and multisensory perception using EEG.",
+  "bio_long": "I am a postgraduate student in neuroscience, focusing on neural oscillations and their role in perception. My research uses EEG to investigate multisensory integration, particularly in audiotactile illusions. I am interested in how brain rhythms shape perceptual experience.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/HDX2023"
+  }
+}

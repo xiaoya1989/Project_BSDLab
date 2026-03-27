@@ -1,0 +1,15 @@
+{
+  "name": "Yue Pan",
+  "name_cn": "潘玥",
+  "role": "Postgraduate Student",
+  "program": "Neuroscience",
+  "email": "marvinpan1114@163.com",
+  "keywords": ["Neural Oscillations", "Memories", "EEG","fMRI"],
+  "bio_short": "Mainly focusing on studying human memories by using fMRI and EEG.",
+  "bio_long": "My work centers on the neural mechanisms of past memory retrieval. I investigate how the human brain organizes sequences of events using ecologically valid episodic memory tasks, leveraging iEEG and fMRI to decode the sequence and substance of rapid memory replay.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/marvinpan99"
+  }
+}

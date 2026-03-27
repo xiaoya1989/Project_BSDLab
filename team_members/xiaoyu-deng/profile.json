@@ -1,0 +1,15 @@
+{
+  "name": "Xiaoyu Deng",
+  "name_cn": "邓晓雨",
+  "role": "PhD Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2025,
+  "graduation_year": 2027,
+  "email": "2025023753@m.scnu.edu.cn",
+  "keywords": ["Neural Oscillations", "Perception", "EEG"],
+  "bio_short": "I am a first-year master student in Applied Psychology at South China Normal University, focusing on close-loop EEG research..",
+  "bio_long": "I am a first-year master student in the School of Psychology at South China Normal University, majoring in Applied Psychology. My research focuses on close-loop EEG systems, exploring real-time brain activity monitoring and feedback mechanisms. I aim to apply these approaches to better understand neural dynamics and develop potential applications in cognitive enhancement.",
+  "links": {
+     ""
+  }
+}

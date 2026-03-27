@@ -1,0 +1,21 @@
+{
+  "name": "Xuantao Zhang",
+  "name_cn": "张轩滔",
+  "role": "Master Student",
+  "program": "Neuroscience",
+  "enrollment_year": 2023,
+  "graduation_year": 2026,
+  "email": "2023023773@m.scnu.edu.cn",
+  "keywords": [
+    "Neural Oscillations",
+    "traveling wave",
+    "sEEG"
+  ],
+  "bio_short": "I study the spatial propagation characteristics of spontaneous neural oscillations, advised by Biao Han.",
+  "bio_long": "During my master's studies, I used sEEG to explore how spontaneous neural oscillations propagate across the brain, and found that they travel as waves with distinct patterns along different pathways. Outside of research, I enjoy sports like table tennis, pickleball, and volleyball. Feel free to reach out to connect.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": ""
+  }
+}

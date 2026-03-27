@@ -1,0 +1,254 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">BSD Lab - Neural Dynamics</title>
+    
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="5">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="6">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet" vid="7">
+
+    <style vid="8">
+        :root {
+            
+            --bg-cream: #f5f1e9;
+            --white: #fbfaf6;
+            --slate: #eeeeee;
+            --sage: #bcb99a;
+            --mustard: #d4b06d;
+            --terracotta: #d3916d;
+            --olive: #62532e;
+            
+            
+            --font-serif: 'Newsreader', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--olive);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        
+        .widget {
+            width: 280px;
+            height: 360px;
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            box-shadow: 0 10px 40px rgba(98, 83, 46, 0.04), 
+                        0 1px 3px rgba(98, 83, 46, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--olive);
+            opacity: 0.6;
+            font-weight: 500;
+        }
+
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pulse-dot {
+            width: 4px;
+            height: 4px;
+            background-color: var(--terracotta);
+            border-radius: 50%;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        
+        .logo-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-mark {
+            width: 140px;
+            height: 140px;
+            
+            mix-blend-mode: multiply; 
+        }
+
+        
+        .widget-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .concept-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--olive);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .motif {
+            font-family: var(--font-sans);
+            font-weight: 300;
+            font-size: 14px;
+            color: var(--sage);
+            letter-spacing: 0.1em;
+        }
+
+        .metadata-line {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--olive);
+            opacity: 0.4;
+            display: flex;
+            gap: 12px;
+        }
+
+        
+        @keyframes flowLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes flowRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        
+        .wave-path {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        
+        .wave-slow {
+            animation: flowLeft 24s linear infinite;
+            stroke: var(--sage);
+            stroke-width: 8;
+            opacity: 0.8;
+        }
+
+        .wave-mid {
+            animation: flowRight 18s linear infinite;
+            stroke: var(--mustard);
+            stroke-width: 5;
+            opacity: 0.9;
+        }
+
+        .wave-fast {
+            animation: flowLeft 14s linear infinite;
+            stroke: var(--terracotta);
+            stroke-width: 3;
+            opacity: 1;
+        }
+
+        .wave-highlight {
+            animation: flowRight 20s linear infinite;
+            stroke: var(--olive);
+            stroke-width: 1;
+            opacity: 0.6;
+        }
+
+        
+        .brain-outline {
+            fill: none;
+            stroke: var(--olive);
+            stroke-width: 0.5;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body vid="9">
+
+    <div class="widget" vid="10">
+        
+        <header class="widget-header" vid="11">
+            <span vid="12">Merchandise Ready</span>
+            <div class="system-status" vid="13">
+                <div class="pulse-dot" vid="14"></div>
+                <span vid="15">Compact</span>
+            </div>
+        </header>
+
+        
+        <div class="logo-container" style="flex-direction: column; gap: 8px; padding: 16px 0;" vid="16">
+            
+            <!-- Compact Logo Mark -->
+            <!-- Compact Logo Mark -->
+            <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" vid="17">
+                <defs vid="18">
+                    <clipPath id="brain-mask" vid="19">
+                        <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="20"></path>
+                    </clipPath>
+                </defs>
+
+                <g clip-path="url(#brain-mask)" vid="21">
+                    <path d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" fill="var(--slate)" opacity="0.15" vid="22"></path>
+                    <path class="wave-path wave-slow" d="M-200,100 Q-150,40 -100,100 T0,100 T100,100 T200,100 T300,100 T400,100" vid="23"></path>
+                    <path class="wave-path wave-mid" d="M-200,120 Q-175,70 -150,120 T-50,120 T50,120 T150,120 T250,120 T350,120 T450,120" vid="24"></path>
+                    <path class="wave-path wave-fast" d="M-200,80 Q-180,50 -160,80 T-80,80 T0,80 T80,80 T160,80 T240,80 T320,80 T400,80" vid="25"></path>
+                    <path class="wave-path wave-highlight" d="M-200,90 Q-160,20 -120,90 T-40,90 T40,90 T120,90 T200,90 T280,90 T360,90 T440,90" vid="26"></path>
+                </g>
+                <path class="brain-outline" d="M55,145 C35,130 25,100 35,75 C45,50 75,35 105,40 C135,45 165,60 170,95 C175,130 150,155 125,160 C100,165 75,160 55,145 Z" vid="27"></path>
+            </svg>
+            
+            <!-- BSD Lab Text - positioned for compact layout -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: -4px;" vid="28">
+                <h1 style="font-family: var(--font-sans); font-size: 22px; font-weight: 600; color: var(--olive); letter-spacing: -0.01em;" vid="29">BSD Lab</h1>
+                <span style="font-family: var(--font-sans); font-size: 8px; color: var(--olive); opacity: 0.6; letter-spacing: 0.05em;" vid="30">Brain State Dynamics</span>
+            </div>
+            
+            
+        </div>
+
+        
+        <footer class="widget-footer" style="gap: 8px; padding-bottom: 8px; opacity: 0.4;" vid="31">
+            <div class="metadata-line" style="font-size: 9px; letter-spacing: 0.05em; text-transform: none;" vid="32">
+                <span vid="33">T-shirts • Mugs • Stickers</span>
+            </div>
+        </footer>
+    </div>
+
+
+</body></html>

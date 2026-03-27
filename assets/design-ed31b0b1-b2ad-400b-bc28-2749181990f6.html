@@ -1,0 +1,270 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">BSD Lab - Dynamic State Logo</title>
+    <style vid="5">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
+        :root {
+            --sand-base: #EAE6DF;
+            --sand-light: #F2EFEA;
+            --text-quiet: #8C867C;
+            --text-dark: #5A5650;
+            --accent-sage: #9EA69E;
+            --accent-clay: #BDB1A8;
+            --line-base: #D4CFC6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #DCD8D0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        
+        .widget {
+            width: 320px;
+            height: 320px;
+            background-color: var(--sand-base);
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 
+                inset 0 2px 4px rgba(255, 255, 255, 0.6),
+                inset 0 -2px 8px rgba(90, 86, 80, 0.05),
+                0 20px 40px rgba(90, 86, 80, 0.08),
+                0 1px 3px rgba(90, 86, 80, 0.04);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .ambient-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(24px);
+            opacity: 0.6;
+            animation: float 14s infinite ease-in-out alternate;
+        }
+
+        .orb-1 {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-sage);
+            top: -20px;
+            left: 20px;
+            animation-delay: -2s;
+        }
+
+        .orb-2 {
+            width: 90px;
+            height: 90px;
+            background: var(--accent-clay);
+            bottom: 30px;
+            right: 10px;
+            filter: blur(30px);
+            animation-duration: 18s;
+        }
+        
+        .orb-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--sand-light);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(40px);
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(15px, 20px) scale(1.05); }
+        }
+
+        
+        .meta-text {
+            position: absolute;
+            z-index: 10;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-quiet);
+            font-weight: 400;
+        }
+
+        .meta-top-left { top: 24px; left: 24px; }
+        .meta-top-right { top: 24px; right: 24px; }
+        .meta-bottom { 
+            bottom: 24px; 
+            width: 100%; 
+            text-align: center; 
+            letter-spacing: 0.1em;
+            color: rgba(90, 86, 80, 0.4);
+        }
+
+        
+        .logo-wrapper {
+            position: relative;
+            z-index: 5;
+            width: 160px;
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        
+        .neural-path {
+            fill: none;
+            stroke-width: 1.25;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        
+        .path-base {
+            stroke: var(--line-base);
+            opacity: 0.6;
+        }
+
+        
+        .path-wave {
+            stroke: url(#wave-gradient);
+            stroke-width: 1.5;
+            stroke-dasharray: 60 140; 
+            animation: flow 4s linear infinite;
+        }
+
+        .wave-2 {
+            stroke: url(#wave-gradient-clay);
+            stroke-dasharray: 40 160;
+            animation: flow 5s linear infinite reverse;
+        }
+
+        .wave-3 {
+            stroke: url(#wave-gradient-sage);
+            stroke-dasharray: 50 150;
+            animation: flow 6s linear infinite;
+            animation-delay: -2s;
+        }
+
+        @keyframes flow {
+            from { stroke-dashoffset: 200; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        
+        .brain-shape {
+            animation: breathe 8s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(0.98); }
+            100% { transform: scale(1.02); }
+        }
+
+    </style>
+</head>
+<body vid="6">
+
+    <div class="widget" vid="7">
+        
+        
+        <div class="ambient-layer" vid="8">
+            <div class="orb orb-1" vid="9"></div>
+            <div class="orb orb-2" vid="10"></div>
+            <div class="orb orb-3" vid="11"></div>
+        </div>
+
+        
+        <div class="meta-text meta-top-left" vid="12">BSD / LAB</div>
+        <div class="meta-text meta-top-right" vid="13">DYN_ST_01</div>
+        <div class="meta-text meta-bottom" vid="14">NEURAL DYNAMICS</div>
+
+        
+        <div class="logo-wrapper" vid="15">
+            <svg viewBox="0 0 100 100" class="brain-shape" vid="16">
+                <defs vid="17">
+                    
+                    <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%" vid="18">
+                        <stop offset="0%" stop-color="var(--text-dark)" stop-opacity="0" vid="19"></stop>
+                        <stop offset="50%" stop-color="var(--text-dark)" stop-opacity="0.8" vid="20"></stop>
+                        <stop offset="100%" stop-color="var(--text-dark)" stop-opacity="0" vid="21"></stop>
+                    </linearGradient>
+
+                    <linearGradient id="wave-gradient-clay" x1="100%" y1="100%" x2="0%" y2="0%" vid="22">
+                        <stop offset="0%" stop-color="var(--accent-clay)" stop-opacity="0" vid="23"></stop>
+                        <stop offset="50%" stop-color="var(--accent-clay)" stop-opacity="1" vid="24"></stop>
+                        <stop offset="100%" stop-color="var(--accent-clay)" stop-opacity="0" vid="25"></stop>
+                    </linearGradient>
+
+                    <linearGradient id="wave-gradient-sage" x1="0%" y1="100%" x2="100%" y2="0%" vid="26">
+                        <stop offset="0%" stop-color="var(--accent-sage)" stop-opacity="0" vid="27"></stop>
+                        <stop offset="50%" stop-color="var(--accent-sage)" stop-opacity="1" vid="28"></stop>
+                        <stop offset="100%" stop-color="var(--accent-sage)" stop-opacity="0" vid="29"></stop>
+                    </linearGradient>
+
+                    
+                    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%" vid="30">
+                        <feGaussianBlur stdDeviation="1.5" result="blur" vid="31"></feGaussianBlur>
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" vid="32"></feComposite>
+                    </filter>
+                </defs>
+
+                
+                <g filter="url(#soft-glow)" vid="33">
+                    
+                    
+                    <path class="neural-path path-base" d="M15,60 C10,40 25,18 50,15 C75,12 88,28 90,50 C92,72 75,85 55,85 C40,85 30,75 25,65 C20,55 20,70 15,60 Z" vid="34"></path>
+                    <path class="neural-path path-wave" d="M15,60 C10,40 25,18 50,15 C75,12 88,28 90,50 C92,72 75,85 55,85 C40,85 30,75 25,65 C20,55 20,70 15,60 Z" vid="35"></path>
+
+                    
+                    <path class="neural-path path-base" d="M25,58 C22,42 32,28 50,26 C68,24 78,36 80,52 C82,68 68,76 52,76 C42,76 35,70 32,62" vid="36"></path>
+                    <path class="neural-path path-wave wave-2" d="M25,58 C22,42 32,28 50,26 C68,24 78,36 80,52 C82,68 68,76 52,76 C42,76 35,70 32,62" vid="37"></path>
+
+                    
+                    <path class="neural-path path-base" d="M35,55 C35,45 42,38 52,38 C62,38 68,46 68,55 C68,64 60,68 52,68 C45,68 40,64 38,58" vid="38"></path>
+                    <path class="neural-path path-wave wave-3" d="M35,55 C35,45 42,38 52,38 C62,38 68,46 68,55 C68,64 60,68 52,68 C45,68 40,64 38,58" vid="39"></path>
+
+                    
+                    <path class="neural-path path-base" d="M10,50 Q30,35 50,55 T90,45" vid="40"></path>
+                    <path class="neural-path path-wave" style="stroke-width: 1; animation-duration: 3s; stroke: var(--text-dark);" d="M10,50 Q30,35 50,55 T90,45" vid="41"></path>
+
+                </g>
+            </svg>
+        </div>
+    </div>
+
+
+</body></html>
