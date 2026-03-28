@@ -1601,9 +1601,28 @@ button {
 }
 
 .publication-archive-item {
-  border-left: 2px solid transparent;
+  position: relative;
   padding: 24px 0;
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.publication-archive-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--terracotta);
+  opacity: 0;
+  transform: scaleY(0.96);
+  transform-origin: center;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
 }
 
 .publication-archive-item + .publication-archive-item {
@@ -1611,9 +1630,13 @@ button {
 }
 
 .publication-archive-item:hover {
-  border-left-color: var(--terracotta);
   background: rgba(251, 250, 246, 0.4);
   padding-left: 1.5rem;
+}
+
+.publication-archive-item:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .publication-archive-item__head {
