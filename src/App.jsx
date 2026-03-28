@@ -620,6 +620,7 @@ function getRouteFromHash() {
 function buildInternalHref(path, lang) {
   const normalizedPath = normalizeRoutePath(path);
   const params = new URLSearchParams(window.location.search);
+  const basePath = window.location.pathname || "/";
 
   if (lang === "zh") {
     params.set("lang", "zh");
@@ -629,7 +630,7 @@ function buildInternalHref(path, lang) {
 
   const query = params.toString();
   const routeHash = normalizedPath === "/" ? "#/" : `#${normalizedPath}`;
-  return `${query ? `?${query}` : ""}${routeHash}`;
+  return `${basePath}${query ? `?${query}` : ""}${routeHash}`;
 }
 
 function normalizeTitle(text) {
@@ -1847,7 +1848,7 @@ export default function App() {
 
   useEffect(() => {
     const target = buildInternalHref(pathname, lang);
-    const current = `${window.location.search}${window.location.hash}`;
+    const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     if (current !== target) {
       window.history.replaceState({}, "", target);
     }
@@ -2002,6 +2003,8 @@ export default function App() {
   const handleToggleLang = () => {
     setLang((prev) => {
       const next = prev === "en" ? "zh" : "en";
+      const nextHref = buildInternalHref(getRouteFromHash(), next);
+      window.history.replaceState({}, "", nextHref);
       window.localStorage.setItem(LANG_KEY, next);
       return next;
     });
@@ -2019,7 +2022,7 @@ export default function App() {
       return;
     }
     event.preventDefault();
-    const current = `${window.location.search}${window.location.hash}`;
+    const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     if (current === href) return;
     window.history.pushState({}, "", href);
     setPathname(getRouteFromHash());
