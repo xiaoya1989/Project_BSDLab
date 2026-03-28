@@ -2601,28 +2601,31 @@ button {
 
 @media (max-width: 767px) {
   .top-nav {
-    height: auto;
-    min-height: 36px;
-    padding: 6px 10px 4px;
-    flex-wrap: wrap;
-    row-gap: 6px;
+    height: 48px;
+    padding: 0 10px;
   }
 
   .top-nav__links {
-    display: flex;
-    order: 3;
-    width: 100%;
-    gap: 14px;
-    font-size: 0.78rem;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 10px;
+    right: 10px;
+    z-index: 60;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid rgba(188, 185, 154, 0.24);
+    background: rgba(251, 250, 246, 0.96);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(98, 83, 46, 0.12);
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
   }
 
-  .top-nav__links::-webkit-scrollbar {
-    display: none;
+  .top-nav__links--open {
+    display: flex;
   }
 
   .mode-toggle {
@@ -2644,7 +2647,11 @@ button {
   }
 
   .top-nav__menu {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
   }
 
   .hero,
@@ -2654,7 +2661,7 @@ button {
   }
 
   .hero {
-    padding-top: 122px;
+    padding-top: 98px;
   }
 
   .people-section {

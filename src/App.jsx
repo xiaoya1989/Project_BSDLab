@@ -1193,8 +1193,13 @@ function getDisplayAuthorInfo(authorText, authorMarks) {
 }
 
 function Header({ pathname, lang, onToggleLang, onNavigate, ui, links }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navClass = (path) =>
     `nav-link ${pathname === path ? "nav-link--active" : ""}`;
+  const handleNavClick = (event, href) => {
+    onNavigate(event, href);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className="top-nav">
@@ -1210,32 +1215,35 @@ function Header({ pathname, lang, onToggleLang, onNavigate, ui, links }) {
       </div>
 
       <div className="top-nav__right">
-        <div className="top-nav__links" aria-label="Primary">
+        <div
+          className={`top-nav__links ${mobileMenuOpen ? "top-nav__links--open" : ""}`}
+          aria-label="Primary"
+        >
           <a
             href={links.home}
             className={navClass("/")}
-            onClick={(event) => onNavigate(event, links.home)}
+            onClick={(event) => handleNavClick(event, links.home)}
           >
             {ui.nav.home}
           </a>
           <a
             href={links.publications}
             className={navClass("/publications")}
-            onClick={(event) => onNavigate(event, links.publications)}
+            onClick={(event) => handleNavClick(event, links.publications)}
           >
             {ui.nav.publications}
           </a>
           <a
             href={links.team}
             className={navClass("/team")}
-            onClick={(event) => onNavigate(event, links.team)}
+            onClick={(event) => handleNavClick(event, links.team)}
           >
             {ui.nav.team}
           </a>
           <a
             href={links.contact}
             className="nav-link"
-            onClick={(event) => onNavigate(event, links.contact)}
+            onClick={(event) => handleNavClick(event, links.contact)}
           >
             {ui.nav.contact}
           </a>
@@ -1244,7 +1252,13 @@ function Header({ pathname, lang, onToggleLang, onNavigate, ui, links }) {
           {lang === "en" ? "中文" : "EN"}
         </button>
 
-        <button className="top-nav__menu" aria-label="Open navigation menu" type="button">
+        <button
+          className="top-nav__menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+          type="button"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+        >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
