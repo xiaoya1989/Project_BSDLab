@@ -2039,6 +2039,22 @@ export default function App() {
     });
   };
 
+  const scrollToJoinContact = () => {
+    const target = document.getElementById("join-contact");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  const routeFromHref = (href) => {
+    try {
+      const hash = new URL(href, window.location.href).hash.replace(/^#/, "");
+      return normalizeRoutePath(hash);
+    } catch {
+      return "/";
+    }
+  };
+
   const handleNavigate = (event, href) => {
     if (
       event.defaultPrevented ||
@@ -2051,10 +2067,17 @@ export default function App() {
       return;
     }
     event.preventDefault();
+    const nextRoute = routeFromHref(href);
     const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
-    if (current === href) return;
+    if (current === href) {
+      if (nextRoute === "/contact") scrollToJoinContact();
+      return;
+    }
     window.history.pushState({}, "", href);
     setPathname(getRouteFromHash());
+    if (nextRoute === "/contact") {
+      window.setTimeout(scrollToJoinContact, 60);
+    }
   };
 
   return (
