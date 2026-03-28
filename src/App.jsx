@@ -205,7 +205,7 @@ const copyByLang = {
       publications: "Publications",
       team: "Team",
       contact: "Contact",
-      subtitle: "University Research Center",
+      subtitle: "South China Normal University",
       copyright: "(c) 2024 Brain State Dynamics Lab. All rights reserved.",
     },
   },
