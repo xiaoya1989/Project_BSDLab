@@ -69,7 +69,9 @@ button {
 .site-shell {
   position: relative;
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .site-shell[data-lang="zh"] {
@@ -2617,6 +2619,34 @@ button {
   .top-nav {
     height: 48px;
     padding: 0 10px;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .top-nav__brand {
+    min-width: 0;
+    max-width: calc(100vw - 120px);
+    gap: 4px;
+  }
+
+  .top-nav__logo {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+  }
+
+  .top-nav__brand-name {
+    font-size: 16px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .top-nav__right {
+    margin-left: auto;
+    flex-shrink: 0;
+    gap: 8px;
   }
 
   .top-nav__links {
