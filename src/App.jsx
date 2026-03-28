@@ -1351,6 +1351,12 @@ function JoinUsSection({ ui }) {
         </article>
       </div>
       <p className="join-note">{ui.join.note}</p>
+      <p className="join-contact">
+        Contact:{" "}
+        <a href="mailto:biao.han@m.scnu.edu.cn">biao.han@m.scnu.edu.cn</a>
+        {" "}or{" "}
+        <a href="mailto:lu.shen2013@gmail.com">lu.shen2013@gmail.com</a>
+      </p>
     </section>
   );
 }
