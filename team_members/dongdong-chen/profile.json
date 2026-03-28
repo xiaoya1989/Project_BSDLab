@@ -1,17 +1,22 @@
-{
-  "name": "Dongdong Chen",
-  "name_cn": "陈冬冬",
-  "role": "Master's Student",
-  "program": "Applied Psychology (Cognitive Neuroscience)",
-  "enrollment_year": 2024,
-  "graduation_year": 2026,
-  "email": "chendongdong@m.scnu.edu.cn",
-  "keywords": ["Emotion", "Perception", "Music Cognition", "EEG"],
-  "bio_short": "Researching neural encoding of music tension using EEG and computational modeling.",
-  "bio_long": "I am a Master's student in Applied Psychology focusing on cognitive neuroscience. My research investigates the neural encoding of music tension during naturalistic listening using EEG. I combine computational modeling with methods such as inter-subject correlation and temporal response functions to study dynamic emotional processing in music.",
-  "links": {
-    "google_scholar": "",
-    "personal_website": "",
-    "github": ""
-  }
+﻿{
+    "name":  "Dongdong Chen",
+    "name_cn":  "陈冬冬",
+    "role":  "MASTER STUDENT",
+    "program":  "Applied Psychology (Cognitive Neuroscience)",
+    "enrollment_year":  2024,
+    "graduation_year":  2026,
+    "email":  "chendongdong@m.scnu.edu.cn",
+    "keywords":  [
+                     "Emotion",
+                     "Perception",
+                     "Music Cognition",
+                     "EEG"
+                 ],
+    "bio_short":  "Researching neural encoding of music tension using EEG and computational modeling.",
+    "bio_long":  "I am a Master\u0027s student in Applied Psychology focusing on cognitive neuroscience. My research investigates the neural encoding of music tension during naturalistic listening using EEG. I combine computational modeling with methods such as inter-subject correlation and temporal response functions to study dynamic emotional processing in music.",
+    "links":  {
+                  "google_scholar":  "",
+                  "personal_website":  "",
+                  "github":  ""
+              }
 }

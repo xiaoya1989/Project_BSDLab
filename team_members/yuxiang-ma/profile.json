@@ -1,17 +1,21 @@
-{
-  "name": "Ma yuxiang",
-  "name_cn": "马宇翔",
-  "role": "Master's Student",
-  "program": "Neuroscience",
-  "enrollment_year": 2025,
-  "graduation_year": 2027,
-  "email": "2025023780@m.scnu.edu.cn",
-  "keywords": ["Neural Oscillations", "Traveling wave", "SEEG"],
-  "bio_short": "Collaborate with The Second Affiliated Hospital of Guangzhou Medical University on epilepsy and traveling wave research, focusing on SEEG data analysis in neuroscience studies.",
-  "bio_long": "I closely collaborate with The Second Affiliated Hospital of Guangzhou Medical University as a core member of the research group. My main research focuses on epilepsy and neural traveling wave mechanisms in the brain. I specialize in processing, analyzing and interpreting invasive SEEG electrophysiological data to support clinical and translational neuroscience studies.",
-  "links": {
-    "google_scholar": "",
-    "personal_website": "",
-    "github": "https://github.com/maaa2794"
-  }
+﻿{
+    "name":  "Yuxiang Ma",
+    "name_cn":  "马宇翔",
+    "role":  "MASTER STUDENT",
+    "program":  "Neuroscience",
+    "enrollment_year":  2025,
+    "graduation_year":  2027,
+    "email":  "2025023780@m.scnu.edu.cn",
+    "keywords":  [
+                     "Neural Oscillations",
+                     "Traveling wave",
+                     "SEEG"
+                 ],
+    "bio_short":  "Collaborate with The Second Affiliated Hospital of Guangzhou Medical University on epilepsy and traveling wave research, focusing on SEEG data analysis in neuroscience studies.",
+    "bio_long":  "I closely collaborate with The Second Affiliated Hospital of Guangzhou Medical University as a core member of the research group. My main research focuses on epilepsy and neural traveling wave mechanisms in the brain. I specialize in processing, analyzing and interpreting invasive SEEG electrophysiological data to support clinical and translational neuroscience studies.",
+    "links":  {
+                  "google_scholar":  "",
+                  "personal_website":  "",
+                  "github":  "https://github.com/maaa2794"
+              }
 }

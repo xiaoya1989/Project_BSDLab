@@ -1,17 +1,21 @@
-{
-  "name": "Shengpei Zhao",
-  "name_cn": "’‘Í…≈‡",
-  "role": "Master's Student",
-  "program": "Music Psychology",
-  "enrollment_year": 2023,
-  "graduation_year": 2026,
-  "email": "2023023887@m.scnu.edu.cn",
-  "keywords": ["Music", "Emotion", "iEEG"],
-  "bio_short": "A beginner in the field of music and brain relationship.",
-  "bio_long": "Graduated from SCNU with a bachelor's degree. Master's candidate. A study on neuro representation of music emotion is in progress.",
-  "links": {
-    "google_scholar": "",
-    "personal_website": "",
-    "github": "https://github.com/ShengpeiZ"
-  }
+Ôªø{
+    "name":  "Shengpei Zhao",
+    "name_cn":  "ËµµÊôüÂüπ",
+    "role":  "MASTER STUDENT",
+    "program":  "Music Psychology",
+    "enrollment_year":  2023,
+    "graduation_year":  2026,
+    "email":  "2023023887@m.scnu.edu.cn",
+    "keywords":  [
+                     "Music",
+                     "Emotion",
+                     "iEEG"
+                 ],
+    "bio_short":  "A beginner in the field of music and brain relationship.",
+    "bio_long":  "Graduated from SCNU with a bachelor\u0027s degree. Master\u0027s candidate. A study on neuro representation of music emotion is in progress.",
+    "links":  {
+                  "google_scholar":  "",
+                  "personal_website":  "",
+                  "github":  "https://github.com/ShengpeiZ"
+              }
 }

@@ -1,17 +1,22 @@
-{
-  "name": "Yihua Chen",
-  "name_cn": "陈依华",
-  "role": "Master's Student",
-  "program": "Neuroscience",
-  "enrollment_year": 2025,
-  "graduation_year": 2028,
-  "email": "yihuachen@m.scnu.edu.cn",
-  "keywords": ["Neural Oscillations", "Alpha Rhythm", "sEEG", "Laminar Power Profile"],
-  "bio_short": "Graduate student in cognitive neuroscience studying neural oscillations and how measurement shapes their interpretation in sEEG.",
-  "bio_long": "I am a graduate student in cognitive neuroscience interested in neural oscillations and their role in cognition. My work focuses on how different measurement and referencing schemes shape the interpretation of laminar activity in sEEG. I am particularly interested in alpha rhythms and how spatial structure can be influenced by signal representation. More broadly, I aim to understand how methodological choices impact conclusions in systems neuroscience.",
-  "links": {
-    "google_scholar": "",
-    "personal_website": "",
-    "github": ""
-  }
+﻿{
+    "name":  "Yihua Chen",
+    "name_cn":  "陈依华",
+    "role":  "MASTER STUDENT",
+    "program":  "Neuroscience",
+    "enrollment_year":  2025,
+    "graduation_year":  2028,
+    "email":  "yihuachen@m.scnu.edu.cn",
+    "keywords":  [
+                     "Neural Oscillations",
+                     "Alpha Rhythm",
+                     "sEEG",
+                     "Laminar Power Profile"
+                 ],
+    "bio_short":  "Graduate student in cognitive neuroscience studying neural oscillations and how measurement shapes their interpretation in sEEG.",
+    "bio_long":  "I am a graduate student in cognitive neuroscience interested in neural oscillations and their role in cognition. My work focuses on how different measurement and referencing schemes shape the interpretation of laminar activity in sEEG. I am particularly interested in alpha rhythms and how spatial structure can be influenced by signal representation. More broadly, I aim to understand how methodological choices impact conclusions in systems neuroscience.",
+    "links":  {
+                  "google_scholar":  "",
+                  "personal_website":  "",
+                  "github":  ""
+              }
 }
