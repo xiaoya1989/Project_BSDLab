@@ -434,11 +434,12 @@ function hasReadableChinese(value = "") {
 }
 
 function parseTeamMemberRaw(raw, slug) {
-  const name = extractStringField(raw, "name") || slug;
+  const rawText = typeof raw === "string" ? raw : JSON.stringify(raw || {});
+  const name = extractStringField(rawText, "name") || slug;
   const normalizedNameOverrides = {
     "yuxiang-ma": "Yuxiang Ma",
   };
-  const nameCnRaw = extractStringField(raw, "name_cn");
+  const nameCnRaw = extractStringField(rawText, "name_cn");
   const slugKey = slug.toLowerCase();
   const nameCn = hasReadableChinese(nameCnRaw)
     ? nameCnRaw
@@ -449,13 +450,13 @@ function parseTeamMemberRaw(raw, slug) {
     "dingxian-huang": currentYear >= 2026 ? "PhD Student" : "Prospective PhD Student",
   };
   const displayRole = roleOverrides[slugKeyLower] || "Master Student";
-  const program = extractStringField(raw, "program");
-  const email = extractStringField(raw, "email");
-  const bioShort = extractStringField(raw, "bio_short");
-  const bioLong = extractStringField(raw, "bio_long");
-  const keywords = extractKeywordList(raw);
-  const enrollmentYear = extractNumberField(raw, "enrollment_year");
-  const graduationYear = extractNumberField(raw, "graduation_year");
+  const program = extractStringField(rawText, "program");
+  const email = extractStringField(rawText, "email");
+  const bioShort = extractStringField(rawText, "bio_short");
+  const bioLong = extractStringField(rawText, "bio_long");
+  const keywords = extractKeywordList(rawText);
+  const enrollmentYear = extractNumberField(rawText, "enrollment_year");
+  const graduationYear = extractNumberField(rawText, "graduation_year");
 
   return {
     id: slug,
