@@ -205,7 +205,7 @@ const copyByLang = {
       publications: "Publications",
       team: "Team",
       contact: "Contact",
-      subtitle: "School of Psychology South China Normal University",
+      subtitle: "School of Psychology\nSouth China Normal University",
       copyright: "(c) 2026 Brain State Dynamics Lab. All rights reserved.",
     },
   },
@@ -1759,7 +1759,7 @@ function Footer({ ui, links }) {
         <BrainWaveLogo className="site-footer__logo" maskId="footer-brain-mask" />
         <div>
           <p className="site-footer__title">BSD Lab</p>
-          <p>{ui.footer.subtitle || "University Research Center"}</p>
+          <p className="site-footer__subtitle">{ui.footer.subtitle || "University Research Center"}</p>
         </div>
       </div>
 

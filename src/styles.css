@@ -2110,6 +2110,10 @@ button {
   font-weight: 600;
 }
 
+.site-footer__subtitle {
+  white-space: pre-line;
+}
+
 .site-footer__links {
   display: flex;
   flex-wrap: wrap;
