@@ -1366,6 +1366,9 @@ function JoinUsSection({ ui }) {
       </div>
       <p className="join-note">{ui.join.note}</p>
       <p className="join-contact" id="join-contact">
+        <span className="join-contact__icon" aria-hidden="true">
+          ✉
+        </span>{" "}
         Contact:{" "}
         <a href="mailto:biao.han@m.scnu.edu.cn">biao.han@m.scnu.edu.cn</a>
         {" "}or{" "}

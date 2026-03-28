@@ -573,6 +573,11 @@ button {
   font-size: 0.94rem;
 }
 
+.join-contact__icon {
+  color: var(--terracotta);
+  font-size: 0.95rem;
+}
+
 .join-contact a {
   color: var(--terracotta);
 }
