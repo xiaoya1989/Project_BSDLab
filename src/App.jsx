@@ -434,38 +434,29 @@ function hasReadableChinese(value = "") {
 }
 
 function parseTeamMemberRaw(raw, slug) {
-  const rawObject = raw && typeof raw === "object" ? raw : null;
   const rawText = typeof raw === "string" ? raw : JSON.stringify(raw || {});
-  const field = (key) => {
-    const value = rawObject?.[key];
-    if (typeof value === "string") return normalizeUnicodeText(value);
-    return extractStringField(rawText, key);
-  };
-  const numberField = (key) => {
-    const value = rawObject?.[key];
-    if (typeof value === "number") return value;
-    return extractNumberField(rawText, key);
-  };
-  const name = field("name") || slug;
+  const name = extractStringField(rawText, "name") || slug;
   const normalizedNameOverrides = {
     "yuxiang-ma": "Yuxiang Ma",
   };
-  const nameCn = field("name_cn");
+  const nameCnRaw = extractStringField(rawText, "name_cn");
+  const slugKey = slug.toLowerCase();
+  const nameCn = hasReadableChinese(nameCnRaw)
+    ? nameCnRaw
+    : teamMemberNameCnFallback[slugKey] || "";
   const currentYear = new Date().getFullYear();
   const slugKeyLower = slug.toLowerCase();
   const roleOverrides = {
     "dingxian-huang": currentYear >= 2026 ? "PhD Student" : "Prospective PhD Student",
   };
   const displayRole = roleOverrides[slugKeyLower] || "Master Student";
-  const program = field("program");
-  const email = field("email");
-  const bioShort = field("bio_short");
-  const bioLong = field("bio_long");
-  const keywords = Array.isArray(rawObject?.keywords)
-    ? rawObject.keywords.map((item) => normalizeUnicodeText(String(item))).filter(Boolean)
-    : extractKeywordList(rawText);
-  const enrollmentYear = numberField("enrollment_year");
-  const graduationYear = numberField("graduation_year");
+  const program = extractStringField(rawText, "program");
+  const email = extractStringField(rawText, "email");
+  const bioShort = extractStringField(rawText, "bio_short");
+  const bioLong = extractStringField(rawText, "bio_long");
+  const keywords = extractKeywordList(rawText);
+  const enrollmentYear = extractNumberField(rawText, "enrollment_year");
+  const graduationYear = extractNumberField(rawText, "graduation_year");
 
   return {
     id: slug,
