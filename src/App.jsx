@@ -206,7 +206,7 @@ const copyByLang = {
       team: "Team",
       contact: "Contact",
       subtitle: "South China Normal University",
-      copyright: "(c) 2024 Brain State Dynamics Lab. All rights reserved.",
+      copyright: "(c) 2026 Brain State Dynamics Lab. All rights reserved.",
     },
   },
   zh: {}, /*
@@ -341,7 +341,7 @@ copyByLang.zh = {
     team: "团队成员",
     contact: "联系我们",
     subtitle: "脑状态动力学实验室",
-    copyright: "© 2024 脑状态动力学实验室 版权所有。",
+    copyright: "© 2026 脑状态动力学实验室 版权所有。",
   },
 };
 
@@ -1762,7 +1762,7 @@ function Footer({ ui, links }) {
         <a href={links.contact}>{ui.footer.contact}</a>
       </div>
 
-      <div className="site-footer__copyright">{ui.footer.copyright || "(c) 2024 Brain State Dynamics Lab. All rights reserved."}</div>
+      <div className="site-footer__copyright">{ui.footer.copyright || "(c) 2026 Brain State Dynamics Lab. All rights reserved."}</div>
       <div className="site-footer__affiliation" aria-label="South China Normal University">
         <img src={scnuLogo} alt="South China Normal University logo" />
       </div>
