@@ -608,7 +608,7 @@ function getLangFromUrl() {
 function normalizeRoutePath(value) {
   if (!value || value === "#") return "/";
   const route = value.startsWith("/") ? value : `/${value}`;
-  if (route === "/publications" || route === "/team" || route === "/") return route;
+  if (route === "/publications" || route === "/team" || route === "/contact" || route === "/") return route;
   return "/";
 }
 
@@ -1365,7 +1365,7 @@ function JoinUsSection({ ui }) {
         </article>
       </div>
       <p className="join-note">{ui.join.note}</p>
-      <p className="join-contact">
+      <p className="join-contact" id="join-contact">
         Contact:{" "}
         <a href="mailto:biao.han@m.scnu.edu.cn">biao.han@m.scnu.edu.cn</a>
         {" "}or{" "}
@@ -1875,6 +1875,15 @@ export default function App() {
   }, [lang, pathname]);
 
   useEffect(() => {
+    if (pathname !== "/contact") return;
+    const timer = window.setTimeout(() => {
+      const target = document.getElementById("join-contact");
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [pathname, lang]);
+
+  useEffect(() => {
     document.title =
       lang === "zh"
         ? "BSD Lab - 脑状态动力学实验室"
@@ -2015,7 +2024,7 @@ export default function App() {
       home: buildInternalHref("/", lang),
       publications: buildInternalHref("/publications", lang),
       team: buildInternalHref("/team", lang),
-      contact: buildInternalHref("/", lang),
+      contact: buildInternalHref("/contact", lang),
     }),
     [lang],
   );
