@@ -1144,7 +1144,7 @@ button {
   box-shadow: none;
   object-fit: cover;
   object-position: center 42%;
-  filter: grayscale(1) contrast(1.04) brightness(1.06) saturate(0.2);
+  filter: contrast(1.02) brightness(1.01) saturate(0.96);
 }
 
 .team-faculty {
