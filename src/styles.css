@@ -624,8 +624,6 @@ button {
   margin: 0 0 32px;
   border-radius: 24px;
   overflow: hidden;
-  background: rgba(251, 250, 246, 0.9);
-  box-shadow: var(--shadow-soft);
 }
 
 .team-photo img {
@@ -2440,14 +2438,6 @@ button {
 .site-shell[data-mode^="variant"] .person-photo-placeholder {
   border-color: rgba(251, 250, 246, 0.24);
   background: linear-gradient(135deg, rgba(245, 241, 233, 0.12), rgba(251, 250, 246, 0.06));
-}
-
-.site-shell[data-mode^="variant"] .team-photo {
-  border-color: rgba(251, 250, 246, 0.18);
-  background: rgba(245, 241, 233, 0.08);
-  box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .site-shell[data-mode^="variant"] .team-faculty-card__role {
