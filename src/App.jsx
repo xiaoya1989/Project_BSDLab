@@ -3,7 +3,7 @@ import { BrainWaveLogo, BackgroundWave } from "./components/BrainWaveLogo";
 import bibUrl from "../exported-references.bib?url";
 import annotationUrl from "../publications_annotation_template.csv?url";
 import publicationDoiOverrides from "./publication_doi_overrides.json";
-import groupPhoto from "../group_photo_20260415.jpg";
+import groupPhoto from "../group_photo_20260415_clip.jpg";
 import scnuLogo from "../SouthChinaNormalUniv_Logo.svg.png";
 import hanBiaoPhoto from "./assets/faculty/han-biao.jpg";
 import shenLuPhotoCrop from "./assets/faculty/shen-lu-crop.jpg";
