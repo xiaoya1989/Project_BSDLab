@@ -1458,12 +1458,6 @@ function PeopleSection() {
       </div>
 
       <figure className="team-photo">
-        <img
-          src={groupPhoto}
-          alt=""
-          aria-hidden="true"
-          className="team-photo__img--full team-photo__img--atmosphere"
-        />
         <img src={groupPhoto} alt="BSD Lab group photo" className="team-photo__img--full team-photo__img--foreground" />
       </figure>
 
@@ -1692,12 +1686,6 @@ function TeamPage({ ui, links }) {
       </section>
 
       <figure className="team-photo team-photo--editorial">
-        <img
-          src={groupPhoto}
-          alt=""
-          aria-hidden="true"
-          className="team-photo__img--full team-photo__img--atmosphere"
-        />
         <img src={groupPhoto} alt="BSD Lab group photo" className="team-photo__img--full team-photo__img--foreground" />
       </figure>
 
