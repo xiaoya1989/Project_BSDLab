@@ -631,12 +631,13 @@ button {
 .team-photo img {
   display: block;
   width: 100%;
-  height: clamp(240px, 34vw, 460px);
+  height: auto;
+  max-height: min(72vh, 680px);
 }
 
 .team-photo__img--full {
-  object-fit: cover;
-  object-position: center 40%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .people-subsection {
@@ -2734,7 +2735,8 @@ button {
   }
 
   .team-photo img {
-    height: clamp(200px, 48vw, 300px);
+    height: auto;
+    max-height: 360px;
   }
 
   .people-subsection {
