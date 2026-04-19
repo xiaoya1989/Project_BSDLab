@@ -1133,7 +1133,7 @@ button {
   height: clamp(52px, 11vw, 120px);
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(245, 241, 233, 0) 0%, rgba(245, 241, 233, 0.92) 100%);
+  background: none;
 }
 
 .team-photo--editorial .team-photo__img--full {
