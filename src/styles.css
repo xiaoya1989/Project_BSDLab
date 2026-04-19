@@ -1059,6 +1059,136 @@ button {
   color: rgba(98, 83, 46, 0.82);
 }
 
+.update-item__link {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--terracotta);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.news-page {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 128px clamp(24px, 5vw, 72px) 96px;
+}
+
+.news-page__hero {
+  max-width: 860px;
+}
+
+.news-page__kicker {
+  margin-bottom: 12px;
+}
+
+.news-page__hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.news-page__meta {
+  margin-bottom: 12px;
+  color: var(--terracotta);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news-page__summary {
+  margin-top: 16px;
+  max-width: 780px;
+  color: rgba(98, 83, 46, 0.76);
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.news-page__cover {
+  margin: 40px 0 52px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(188, 185, 154, 0.22);
+  background: rgba(251, 250, 246, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.news-page__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.news-article {
+  max-width: 780px;
+  color: rgba(98, 83, 46, 0.88);
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.news-article h1,
+.news-article h2,
+.news-article h3,
+.news-article h4 {
+  margin: 32px 0 14px;
+  color: var(--olive);
+  letter-spacing: -0.02em;
+}
+
+.news-article h2 {
+  font-size: 1.72rem;
+}
+
+.news-article p,
+.news-article ul,
+.news-article ol,
+.news-article blockquote {
+  margin: 18px 0;
+}
+
+.news-article ul,
+.news-article ol {
+  padding-left: 22px;
+}
+
+.news-article a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-article img {
+  display: block;
+  width: 100%;
+  margin: 24px 0;
+  border-radius: 18px;
+}
+
+.news-article blockquote {
+  padding-left: 18px;
+  border-left: 2px solid rgba(211, 145, 109, 0.42);
+  color: rgba(98, 83, 46, 0.72);
+}
+
+.news-page__footer {
+  margin-top: 42px;
+}
+
+.news-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--olive);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .publications-page {
   width: min(100%, 1440px);
   margin: 0 auto;
@@ -2579,6 +2709,8 @@ button {
 }
 
 .site-shell[data-mode^="variant"] .update-item p,
+.site-shell[data-mode^="variant"] .news-page__summary,
+.site-shell[data-mode^="variant"] .news-article,
 .site-shell[data-mode^="variant"] .publications-page__header span,
 .site-shell[data-mode^="variant"] .publication-row__content p,
 .site-shell[data-mode^="variant"] .publication-row__year {
@@ -2586,6 +2718,11 @@ button {
 }
 
 .site-shell[data-mode^="variant"] .update-item h4,
+.site-shell[data-mode^="variant"] .news-page__hero h1,
+.site-shell[data-mode^="variant"] .news-article h1,
+.site-shell[data-mode^="variant"] .news-article h2,
+.site-shell[data-mode^="variant"] .news-article h3,
+.site-shell[data-mode^="variant"] .news-article h4,
 .site-shell[data-mode^="variant"] .publications-page__header h1,
 .site-shell[data-mode^="variant"] .publication-row__content h4,
 .site-shell[data-mode^="variant"] .publications-archive-hero h1,
@@ -2620,6 +2757,21 @@ button {
 
 .site-shell[data-mode^="variant"] .publication-archive-item:hover {
   background: rgba(245, 241, 233, 0.08);
+}
+
+.site-shell[data-mode^="variant"] .news-page__cover {
+  border-color: rgba(251, 250, 246, 0.18);
+  background: rgba(245, 241, 233, 0.08);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.site-shell[data-mode^="variant"] .update-item__link,
+.site-shell[data-mode^="variant"] .news-page__meta,
+.site-shell[data-mode^="variant"] .news-page__back,
+.site-shell[data-mode^="variant"] .news-article a {
+  color: #efad8e;
 }
 
 .site-shell[data-mode^="variant"] .pub-filter-btn {

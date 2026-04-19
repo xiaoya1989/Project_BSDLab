@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F5F1E9"/>
+  <rect x="44" y="44" width="1112" height="542" rx="28" fill="#FBFAF6" stroke="#BCB99A" stroke-opacity="0.35"/>
+  <circle cx="908" cy="182" r="164" fill="#EEE8DC"/>
+  <path d="M788 182C828 134 868 230 908 182C948 134 988 230 1028 182C1068 134 1108 230 1148 182" stroke="#D3916D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M788 212C828 176 868 248 908 212C948 176 988 248 1028 212C1068 176 1108 248 1148 212" stroke="#D4B06D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M788 152C828 104 868 200 908 152C948 104 988 200 1028 152C1068 104 1108 200 1148 152" stroke="#BCB99A" stroke-width="14" stroke-linecap="round" stroke-opacity="0.8"/>
+  <path d="M821 323C760 288 726 222 742 156C758 90 836 48 914 64C992 80 1064 124 1078 210C1092 296 1028 354 960 376C892 398 814 383 821 323Z" stroke="#62532E" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M96 186H214" stroke="#D3916D" stroke-width="2"/>
+  <text x="96" y="240" fill="#62532E" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="600">BSD Lab</text>
+  <text x="96" y="304" fill="#8A8164" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="400">Brain State Dynamics Lab</text>
+  <text x="96" y="412" fill="#62532E" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Understanding and controlling brain states</text>
+  <text x="96" y="454" fill="#62532E" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">to shape perception and behavior</text>
+</svg>

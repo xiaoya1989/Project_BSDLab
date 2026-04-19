@@ -7,6 +7,7 @@ import groupPhoto from "../group_photo_20260415_clip.jpg";
 import scnuLogo from "../SouthChinaNormalUniv_Logo.svg.png";
 import hanBiaoPhoto from "./assets/faculty/han-biao.jpg";
 import shenLuPhotoCrop from "./assets/faculty/shen-lu-crop.jpg";
+import { getPostBySlug, getPostsForLanguage } from "./lib/posts";
 
 const MODE_CONTROL_KEY = "bsd-mode-control";
 const MANUAL_MODE_KEY = "bsd-manual-mode";
@@ -607,8 +608,9 @@ function getLangFromUrl() {
 
 function normalizeRoutePath(value) {
   if (!value || value === "#") return "/";
-  const route = value.startsWith("/") ? value : `/${value}`;
+  const route = (value.startsWith("/") ? value : `/${value}`).replace(/\/+$/, "") || "/";
   if (route === "/publications" || route === "/team" || route === "/contact" || route === "/") return route;
+  if (route.startsWith("/news/") && route.length > "/news/".length) return route;
   return "/";
 }
 
@@ -640,6 +642,17 @@ function normalizeTitle(text) {
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function formatNewsDate(dateString, lang) {
+  if (!dateString) return "";
+  const date = new Date(`${dateString}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return dateString;
+  return date.toLocaleDateString(lang === "zh" ? "zh-CN" : "en-US", {
+    year: "numeric",
+    month: lang === "zh" ? "long" : "long",
+    day: "numeric",
+  });
 }
 
 function stripTags(html) {
@@ -1378,8 +1391,8 @@ function JoinUsSection({ ui }) {
   );
 }
 
-function UpdatesSection({ ui, lang }) {
-  const updates = updatesByLang[lang] || updatesByLang.en;
+function UpdatesSection({ ui, lang, onNavigate, posts }) {
+  const updates = posts;
   return (
     <section className="updates-section" id="updates">
       <div className="section-heading section-heading--center">
@@ -1391,11 +1404,78 @@ function UpdatesSection({ ui, lang }) {
           <article key={`${item.date}-${item.title}`} className="update-item">
             <p className="update-item__date">{item.date}</p>
             <h4>{item.title}</h4>
-            <p>{item.content}</p>
+            <p>{item.summary}</p>
+            <a
+              href={buildInternalHref(item.route, lang)}
+              className="update-item__link"
+              onClick={(event) => onNavigate(event, buildInternalHref(item.route, lang))}
+            >
+              {lang === "zh" ? "阅读全文" : "Read article"}
+            </a>
           </article>
         ))}
       </div>
     </section>
+  );
+}
+
+function NewsPage({ post, lang, onNavigate }) {
+  const isZh = lang === "zh";
+
+  if (!post) {
+    return (
+      <main className="news-page">
+        <section className="news-page__hero">
+          <div className="hero__kicker news-page__kicker">
+            <div className="hero__line" />
+            <span>{isZh ? "实验室动态" : "Lab Update"}</span>
+          </div>
+          <h1>{isZh ? "未找到该动态" : "Post not found"}</h1>
+          <p>{isZh ? "这篇动态可能尚未发布，或链接已经发生变化。" : "This post may not be published yet, or its link may have changed."}</p>
+          <a
+            href={buildInternalHref("/", lang)}
+            className="news-page__back"
+            onClick={(event) => onNavigate(event, buildInternalHref("/", lang))}
+          >
+            {isZh ? "返回首页" : "Back to home"}
+          </a>
+        </section>
+      </main>
+    );
+  }
+
+  return (
+    <main className="news-page">
+      <section className="news-page__hero">
+        <div className="hero__kicker news-page__kicker">
+          <div className="hero__line" />
+          <span>{isZh ? "实验室动态" : "Lab Update"}</span>
+        </div>
+        <p className="news-page__meta">{formatNewsDate(post.date, lang)}</p>
+        <h1>{post.title}</h1>
+        <p className="news-page__summary">{post.summary}</p>
+      </section>
+
+      {post.coverImage ? (
+        <figure className="news-page__cover">
+          <img src={post.coverImage} alt={post.title} />
+        </figure>
+      ) : null}
+
+      <article className="news-article">
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </article>
+
+      <div className="news-page__footer">
+        <a
+          href={buildInternalHref("/", lang)}
+          className="news-page__back"
+          onClick={(event) => onNavigate(event, buildInternalHref("/", lang))}
+        >
+          {isZh ? "返回首页" : "Back to home"}
+        </a>
+      </div>
+    </main>
   );
 }
 
@@ -1803,6 +1883,12 @@ export default function App() {
   const [coords, setCoords] = useState(null);
   const [publications, setPublications] = useState([]);
   const [pathname, setPathname] = useState(() => getRouteFromHash());
+  const posts = useMemo(() => getPostsForLanguage(lang), [lang]);
+  const currentPost = useMemo(() => {
+    if (!pathname.startsWith("/news/")) return null;
+    const slug = pathname.slice("/news/".length);
+    return getPostBySlug(slug, lang);
+  }, [lang, pathname]);
 
   const mode = useMemo(
     () => (modeControl === "auto" ? autoMode : manualMode),
@@ -1886,12 +1972,14 @@ export default function App() {
     return () => window.clearTimeout(timer);
   }, [pathname, lang]);
 
-  useEffect(() => {
-    document.title =
-      lang === "zh"
-        ? "BSD Lab - 脑状态动力学实验室"
-        : "BSD Lab - Brain State Dynamics Lab";
-  }, [lang]);
+    useEffect(() => {
+      document.title =
+        currentPost
+          ? `${currentPost.title} | BSD Lab`
+          : lang === "zh"
+            ? "BSD Lab - 脑状态动力学实验室"
+            : "BSD Lab - Brain State Dynamics Lab";
+    }, [currentPost, lang]);
 
   useEffect(() => {
     if (!coords) return;
@@ -2021,6 +2109,7 @@ export default function App() {
 
   const isPublicationsPage = pathname === "/publications";
   const isTeamPage = pathname === "/team";
+  const isNewsPage = pathname.startsWith("/news/");
   const ui = copyByLang[lang] || copyByLang.en;
   const links = useMemo(
     () => ({
@@ -2095,18 +2184,20 @@ export default function App() {
         ui={ui}
         links={links}
       />
-      {isPublicationsPage ? (
-        <PublicationsPage items={publications} ui={ui} links={links} />
-      ) : isTeamPage ? (
-        <TeamPage ui={ui} links={links} />
-      ) : (
-        <>
-          <Hero mode={mode} ui={ui} links={links} />
-          <WhatWeDoSection ui={ui} />
-          <JoinUsSection ui={ui} />
-          <UpdatesSection ui={ui} lang={lang} />
-        </>
-      )}
+        {isPublicationsPage ? (
+          <PublicationsPage items={publications} ui={ui} links={links} />
+        ) : isTeamPage ? (
+          <TeamPage ui={ui} links={links} />
+        ) : isNewsPage ? (
+          <NewsPage post={currentPost} lang={lang} onNavigate={handleNavigate} />
+        ) : (
+          <>
+            <Hero mode={mode} ui={ui} links={links} />
+            <WhatWeDoSection ui={ui} />
+            <JoinUsSection ui={ui} />
+            <UpdatesSection ui={ui} lang={lang} onNavigate={handleNavigate} posts={posts} />
+          </>
+        )}
       <Footer ui={ui} links={links} />
     </div>
   );
