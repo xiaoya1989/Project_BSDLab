@@ -640,11 +640,6 @@ button {
   object-position: center center;
 }
 
-.team-photo__img--foreground {
-  position: relative;
-  z-index: 1;
-}
-
 .people-subsection {
   display: flex;
   align-items: baseline;
