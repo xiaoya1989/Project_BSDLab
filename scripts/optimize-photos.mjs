@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const root = process.cwd();
-const targets = [
+const defaultTargets = [
   "group_photo.jpg",
   "team_members",
   "src/assets/faculty",
@@ -30,7 +30,7 @@ async function walk(entryPath, files) {
 function planFor(filePath) {
   const base = path.basename(filePath).toLowerCase();
   const ext = path.extname(filePath).toLowerCase();
-  const isGroup = base === "group_photo.jpg";
+  const isGroup = base.startsWith("group_photo");
 
   const maxWidth = isGroup ? 2200 : 1200;
 
@@ -89,6 +89,8 @@ function formatBytes(bytes) {
 }
 
 async function main() {
+  const cliTargets = process.argv.slice(2);
+  const targets = cliTargets.length ? cliTargets : defaultTargets;
   const files = [];
   for (const target of targets) {
     const full = path.join(root, target);
