@@ -1269,13 +1269,13 @@ button {
 .team-photo--editorial .team-photo__img--full {
   position: relative;
   z-index: 0;
-  height: clamp(320px, 43vw, 620px);
+  height: clamp(460px, 52vw, 780px);
   border: none;
   border-radius: 0;
   clip-path: none;
   box-shadow: none;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 88%;
   filter: contrast(1.02) brightness(1.01) saturate(0.96);
 }
 
@@ -1296,7 +1296,7 @@ button {
     height: auto;
     max-height: none;
     object-fit: contain;
-    object-position: center center;
+    object-position: center 72%;
   }
 }
 
