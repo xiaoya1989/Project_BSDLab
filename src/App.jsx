@@ -1402,15 +1402,23 @@ function UpdatesSection({ ui, lang, onNavigate, posts }) {
       <div className="updates-list">
         {updates.map((item) => (
           <article key={`${item.date}-${item.title}`} className="update-item">
-            <p className="update-item__date">{item.date}</p>
-            <h4>{item.title}</h4>
-            <p>{item.summary}</p>
             <a
               href={buildInternalHref(item.route, lang)}
-              className="update-item__link"
+              className="update-card"
               onClick={(event) => onNavigate(event, buildInternalHref(item.route, lang))}
             >
-              {lang === "zh" ? "阅读全文" : "Read article"}
+              <figure className="update-card__media">
+                <img src={item.coverImage || "/posts/default-cover.svg"} alt={item.title} loading="lazy" />
+              </figure>
+              <div className="update-card__content">
+                <div className="update-card__meta">
+                  <span>{item.tags?.[0] || (lang === "zh" ? "实验室动态" : "Lab Update")}</span>
+                  <time dateTime={item.date}>{item.date?.slice(0, 4) || ""}</time>
+                </div>
+                <h4>{item.title}</h4>
+                <p>{item.summary}</p>
+                <span className="update-item__link">{lang === "zh" ? "阅读全文" : "Read article"}</span>
+              </div>
             </a>
           </article>
         ))}

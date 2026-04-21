@@ -1022,51 +1022,137 @@ button {
 }
 
 .updates-list {
-  border-top: 1px solid rgba(188, 185, 154, 0.3);
-  border-bottom: 1px solid rgba(188, 185, 154, 0.3);
-  background: rgba(251, 250, 246, 0.75);
-  padding: 0 clamp(14px, 2vw, 28px);
-  border-radius: 14px;
+  display: grid;
+  gap: 18px;
 }
 
 .update-item {
-  padding: 24px 6px;
-  border-top: 1px solid rgba(188, 185, 154, 0.28);
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(251, 250, 246, 0.78);
+  box-shadow: 0 10px 32px rgba(98, 83, 46, 0.04);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease;
 }
 
-.update-item:first-child {
-  border-top: 0;
+.update-item:hover {
+  transform: translateY(-2px);
+  background: rgba(251, 250, 246, 0.94);
+  box-shadow: 0 18px 44px rgba(98, 83, 46, 0.08);
 }
 
-.update-item__date {
-  font-size: 0.74rem;
+.update-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 32%) 1fr;
+  min-height: 260px;
+  color: inherit;
+}
+
+.update-card__media {
+  min-height: 260px;
+  overflow: hidden;
+  background: rgba(98, 83, 46, 0.08);
+}
+
+.update-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.02) brightness(0.98);
+  transition: transform 0.42s ease;
+}
+
+.update-item:hover .update-card__media img {
+  transform: scale(1.035);
+}
+
+.update-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(26px, 4vw, 52px);
+}
+
+.update-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: rgba(98, 83, 46, 0.55);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--terracotta);
-  font-weight: 600;
+}
+
+.update-card__meta span {
+  display: inline-flex;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background: rgba(211, 145, 109, 0.08);
+  color: rgba(211, 145, 109, 0.9);
 }
 
 .update-item h4 {
-  margin-top: 8px;
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
+  max-width: 860px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  color: var(--olive);
 }
 
 .update-item p {
-  margin-top: 8px;
-  max-width: 860px;
+  margin-top: 18px;
+  max-width: 760px;
   line-height: 1.75;
-  color: rgba(98, 83, 46, 0.82);
+  color: rgba(98, 83, 46, 0.68);
 }
 
 .update-item__link {
   display: inline-flex;
-  margin-top: 12px;
-  color: var(--terracotta);
-  font-size: 0.78rem;
+  width: max-content;
+  margin-top: 24px;
+  color: rgba(98, 83, 46, 0.52);
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.update-item:hover .update-item__link {
+  color: var(--terracotta);
+  transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+  .update-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .update-card__media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .update-card__content {
+    padding: 24px;
+  }
+
+  .update-card__meta {
+    gap: 10px;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
 }
 
 .news-page {
@@ -2699,13 +2785,27 @@ button {
 }
 
 .site-shell[data-mode^="variant"] .updates-list {
-  border-top-color: rgba(251, 250, 246, 0.18);
-  border-bottom-color: rgba(251, 250, 246, 0.18);
-  background: rgba(245, 241, 233, 0.08);
+  background: transparent;
 }
 
 .site-shell[data-mode^="variant"] .update-item {
-  border-top-color: rgba(251, 250, 246, 0.18);
+  background: rgba(245, 241, 233, 0.08);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.site-shell[data-mode^="variant"] .update-item:hover {
+  background: rgba(245, 241, 233, 0.12);
+}
+
+.site-shell[data-mode^="variant"] .update-card__meta {
+  color: rgba(234, 237, 234, 0.58);
+}
+
+.site-shell[data-mode^="variant"] .update-card__meta span {
+  background: rgba(239, 173, 142, 0.12);
+  color: rgba(239, 173, 142, 0.92);
 }
 
 .site-shell[data-mode^="variant"] .update-item p,
