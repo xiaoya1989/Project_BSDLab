@@ -1056,6 +1056,23 @@ button {
   background: rgba(98, 83, 46, 0.08);
 }
 
+.update-card__media--logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(212, 176, 109, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(211, 145, 109, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(245, 241, 233, 0.98), rgba(238, 238, 238, 0.82));
+}
+
+.update-card__logo {
+  width: min(42%, 150px);
+  min-width: 92px;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+}
+
 .update-card__media img {
   display: block;
   width: 100%;
@@ -1142,6 +1159,10 @@ button {
   .update-card__media {
     aspect-ratio: 16 / 10;
     min-height: 0;
+  }
+
+  .update-card__logo {
+    width: min(34%, 128px);
   }
 
   .update-card__content {
@@ -2806,6 +2827,18 @@ button {
 .site-shell[data-mode^="variant"] .update-card__meta span {
   background: rgba(239, 173, 142, 0.12);
   color: rgba(239, 173, 142, 0.92);
+}
+
+.site-shell[data-mode^="variant"] .update-card__media--logo {
+  background:
+    radial-gradient(circle at 25% 20%, rgba(212, 176, 109, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(239, 173, 142, 0.12), transparent 28%),
+    linear-gradient(135deg, rgba(245, 241, 233, 0.11), rgba(251, 250, 246, 0.06));
+}
+
+.site-shell[data-mode^="variant"] .update-card__logo {
+  mix-blend-mode: normal;
+  opacity: 0.96;
 }
 
 .site-shell[data-mode^="variant"] .update-item p,

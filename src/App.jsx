@@ -1393,6 +1393,7 @@ function JoinUsSection({ ui }) {
 
 function UpdatesSection({ ui, lang, onNavigate, posts }) {
   const updates = posts;
+  const hasCustomCover = (coverImage) => coverImage && coverImage !== "/posts/default-cover.svg";
   return (
     <section className="updates-section" id="updates">
       <div className="section-heading section-heading--center">
@@ -1407,8 +1408,12 @@ function UpdatesSection({ ui, lang, onNavigate, posts }) {
               className="update-card"
               onClick={(event) => onNavigate(event, buildInternalHref(item.route, lang))}
             >
-              <figure className="update-card__media">
-                <img src={item.coverImage || "/posts/default-cover.svg"} alt={item.title} loading="lazy" />
+              <figure className={`update-card__media ${hasCustomCover(item.coverImage) ? "" : "update-card__media--logo"}`}>
+                {hasCustomCover(item.coverImage) ? (
+                  <img src={item.coverImage} alt={item.title} loading="lazy" />
+                ) : (
+                  <BrainWaveLogo className="update-card__logo" maskId={`update-logo-${item.slug}`} variant="hero" />
+                )}
               </figure>
               <div className="update-card__content">
                 <div className="update-card__meta">
