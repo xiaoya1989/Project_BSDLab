@@ -357,7 +357,7 @@ const manualPublications = [
     month: 4,
     day: 6,
     doi: "10.1523/JNEUROSCI.1171-25.2026",
-    url: "https://www.jneurosci.org/content/early/2026/04/03/JNEUROSCI.1171-25.2026",
+    url: "/papers/JNEUROSCI.1171-25.2026.full.pdf",
     source: "manual",
     forcedInclude: true,
     dedupeKey: "doi:10.1523/jneurosci.1171-25.2026",
