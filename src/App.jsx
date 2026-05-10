@@ -348,6 +348,22 @@ copyByLang.zh = {
 
 const manualPublications = [
   {
+    id: "manual-jneurosci-2026-1171",
+    title: "Goal-directed action planning modulates surround suppression in the visual system",
+    authors:
+      "Yihui Zhang, Jie Gao, Zhiqing Deng, Tian Wang, Wenyuan Wang, Yanli Wang, Can Wang, Xiaoli Liu, Yijin Wang, Jinyi Long, J. Randall Flanagan, Jason P. Gallivan, Biao Han, Juan Chen",
+    venue: "The Journal of Neuroscience",
+    year: 2026,
+    month: 4,
+    day: 6,
+    doi: "10.1523/JNEUROSCI.1171-25.2026",
+    url: "https://www.jneurosci.org/content/early/2026/04/03/JNEUROSCI.1171-25.2026",
+    source: "manual",
+    forcedInclude: true,
+    dedupeKey: "doi:10.1523/jneurosci.1171-25.2026",
+    authorMarks: createEmptyMarks(),
+  },
+  {
     id: "manual-biorxiv-2026-710730",
     title: "Instantaneous Beta Frequency Regulates Self-Generated Timing in Humans",
     authors: "Yitong Zeng, Xiangshu Hu, Zhenyi Hu, Jia Li, Qianyi Wu, Lu Shen, Biao Han",
