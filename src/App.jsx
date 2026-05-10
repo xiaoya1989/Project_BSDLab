@@ -1748,7 +1748,7 @@ function TeamPage({ ui, links }) {
       imagePosition: "center 34%",
         emails: ["biao.han@m.scnu.edu.cn"],
         links: [
-          { label: "Google Scholar", href: "https://scholar.google.com/citations?user=pf3bhxEAAAAJ&hl=en" },
+          { label: "Google Scholar", href: "https://scholar.google.com/citations?user=dEsYl-wAAAAJ&hl=zh-CN" },
           { label: "Website", href: hanProfile.website },
         ],
       },
@@ -1761,7 +1761,7 @@ function TeamPage({ ui, links }) {
       imagePosition: "50% 36%",
         emails: ["lu.shen2013@gmail.com", "lushen@m.scnu.edu.cn"],
         links: [
-          { label: "Google Scholar", href: "https://scholar.google.com/citations?user=dEsYl-wAAAAJ&hl=zh-CN" },
+          { label: "Google Scholar", href: "https://scholar.google.com/citations?user=pf3bhxEAAAAJ&hl=en" },
           { label: ui.nav.publications, href: links.publications },
         ],
       },
