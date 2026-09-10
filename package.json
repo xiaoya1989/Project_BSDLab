@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "validate:content": "node ./scripts/validate-content.mjs",
+    "check": "npm run validate:content && npm run build",
     "preview": "vite preview",
     "wechat:drafts": "node ./scripts/publish-wechat-drafts.mjs"
   },
