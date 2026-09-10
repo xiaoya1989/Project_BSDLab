@@ -1,0 +1,211 @@
+{
+  "faculty": {
+    "han": {
+      "name": "Biao Han",
+      "nameCn": "韩彪",
+      "role": "Principal Investigator",
+      "keywords": [
+        "Neural Oscillations",
+        "Conscious Perception",
+        "Internal Timing",
+        "Traveling Waves"
+      ],
+      "bioShort": "I study how intrinsic neural oscillations shape conscious perception and internally generated timing across cortical networks.",
+      "bioLong": "I study how intrinsic neural oscillations control conscious perception and internally generated timing. Combining psychophysics, human intracranial recordings, electrophysiology, neuroimaging, computational modeling, and closed-loop stimulation, I investigate how oscillatory phase, frequency, and traveling-wave dynamics gate information flow across cortical networks to determine perceptual outcomes.",
+      "focus": [
+        "Oscillatory control of perception and timing",
+        "Phase/frequency/traveling-wave gating across cortical networks",
+        "Causal tests with real-time closed-loop stimulation"
+      ],
+      "website": "https://biaohan.org/"
+    },
+    "shen": {
+      "name": "Lu Shen",
+      "nameCn": "沈路",
+      "role": "Principal Investigator",
+      "keywords": [
+        "Cognitive Neuroscience",
+        "Perceptual Inference",
+        "Multisensory Integration",
+        "Brain-State Modulation"
+      ],
+      "bioShort": "I study how brain states shape perceptual experience and cognitive processing through fMRI, EEG, iEEG, and brain-state-dependent closed-loop approaches.",
+      "bioLong": "I study how brain states shape perceptual experience and cognitive processing. Combining cognitive neuroscience with fMRI, EEG, and intracranial recordings (iEEG), I investigate how perceptual inference and multisensory integration emerge from dynamic interactions across large-scale brain networks, and how these processes can be modulated through brain-state-dependent and closed-loop approaches.",
+      "focus": [
+        "Pre-stimulus brain-state effects on perceptual decisions",
+        "Multisensory integration with EEG/fMRI/intracranial datasets",
+        "Real-time decoding and adaptive closed-loop paradigms"
+      ]
+    }
+  },
+  "copy": {
+    "en": {
+      "nav": {
+        "home": "Home",
+        "publications": "Publications",
+        "team": "Team",
+        "contact": "Contact"
+      },
+      "hero": {
+        "kicker": "Brain State Dynamics Lab",
+        "title1": "Understanding and controlling brain states",
+        "title2": "to shape perception and behavior",
+        "body": "The brain is not static. It constantly fluctuates between dynamic states that shape how we perceive, think, and act. At BSD Lab, we investigate how intrinsic brain states, especially neural oscillations, govern information processing across cortical networks and enable real-time, closed-loop interaction with the brain.",
+        "ctaPrimary": "Join Us",
+        "ctaSecondary": "Publications"
+      },
+      "what": {
+        "title": "What We Do",
+        "desc": "We integrate cognitive neuroscience with cutting-edge neurotechnology to move from observing brain states to interacting with them in real time.",
+        "methodTitle": "Methods We Combine",
+        "questionTitle": "Key Questions",
+        "methods": [
+          "Cognitive psychology and psychophysics",
+          "EEG, fMRI, and human intracranial recordings (sEEG/ECoG)",
+          "Computational modeling of brain dynamics",
+          "Real-time decoding and closed-loop stimulation"
+        ],
+        "questions": [
+          "How do brain states gate conscious perception?",
+          "How does information flow across distributed brain networks?",
+          "Can we predict perception from ongoing neural activity?",
+          "Can we control brain states in real time?"
+        ]
+      },
+      "join": {
+        "title": "Join Us",
+        "desc": "We are building an interdisciplinary lab bridging neuroscience, cognition, engineering, and computation.",
+        "fieldTitle": "Interdisciplinary Interface",
+        "interestTitle": "Who We Are Looking For",
+        "fields": [
+          "Neuroscience",
+          "Psychology",
+          "Engineering",
+          "Computer Science"
+        ],
+        "interests": [
+          "Brain dynamics and neural oscillations",
+          "Consciousness and perception",
+          "Intracranial data and advanced neurotechnology",
+          "Closed-loop systems and brain-computer interfaces"
+        ],
+        "note": "You do not need experience in all areas. Curiosity and the willingness to cross disciplines matter most."
+      },
+      "updates": {
+        "title": "Updates",
+        "desc": "Lab announcements, project milestones, and opportunities for new students and collaborators."
+      },
+      "publications": {
+        "archives": "The Archives",
+        "title": "Publications",
+        "subtitle": "Scholarly contributions to neuroscience, from theoretical frameworks to empirical computational and translational models.",
+        "all": "All Works",
+        "journals": "Journal Articles",
+        "preprints": "Preprints",
+        "sortBy": "Sort By",
+        "newest": "Newest First",
+        "oldest": "Oldest First",
+        "empty": "No publications found for this filter.",
+        "cta": "Interested in collaborating or accessing our datasets?",
+        "ctaButton": "Contact BSD Lab"
+      },
+      "team": {
+        "kicker": "The People",
+        "title": "Research Team",
+        "subtitle": "A collaborative group of neuroscientists, engineers, and mathematicians dedicated to decoding the brain's dynamic states.",
+        "members": "Lab Members"
+      },
+      "footer": {
+        "publications": "Publications",
+        "team": "Team",
+        "contact": "Contact",
+        "subtitle": "School of Psychology\nSouth China Normal University",
+        "copyright": "(c) 2026 Brain State Dynamics Lab. All rights reserved."
+      }
+    },
+    "zh": {
+      "nav": {
+        "home": "首页",
+        "publications": "论文发表",
+        "team": "团队成员",
+        "contact": "联系我们"
+      },
+      "hero": {
+        "kicker": "Brain State Dynamics Lab",
+        "title1": "BSD Lab",
+        "title2": "脑状态动力学",
+        "body": "探索意识与感知的神经机制，推动下一代脑机接口技术发展。",
+        "ctaPrimary": "探索研究",
+        "ctaSecondary": "最新论文"
+      },
+      "what": {
+        "title": "我们在做什么",
+        "desc": "我们融合认知神经科学与前沿神经技术，推动研究从“观察脑状态”走向“实时交互与调控脑状态”。",
+        "methodTitle": "核心方法",
+        "questionTitle": "关键科学问题",
+        "methods": [
+          "认知心理学与心理物理学",
+          "EEG、fMRI 与人类颅内记录（sEEG/ECoG）",
+          "脑动力学计算建模",
+          "实时解码与闭环刺激"
+        ],
+        "questions": [
+          "脑状态如何门控意识知觉？",
+          "信息如何在分布式脑网络中流动？",
+          "能否基于持续神经活动预测知觉结果？",
+          "能否在实时中调控脑状态？"
+        ]
+      },
+      "join": {
+        "title": "加入我们",
+        "desc": "我们正在建设一个跨学科实验室，连接神经科学、心理学、工程与计算。",
+        "fieldTitle": "跨学科交叉",
+        "interestTitle": "招募方向",
+        "fields": [
+          "神经科学",
+          "心理学",
+          "工程",
+          "计算机科学"
+        ],
+        "interests": [
+          "脑动力学与神经振荡",
+          "意识与知觉",
+          "颅内数据与神经技术",
+          "闭环系统与脑机接口"
+        ],
+        "note": "不需要覆盖所有方向。我们最看重的是好奇心与跨学科协作意愿。"
+      },
+      "updates": {
+        "title": "实验室动态",
+        "desc": "发布实验室进展、项目里程碑与招募信息。"
+      },
+      "publications": {
+        "archives": "论文档案",
+        "title": "论文发表",
+        "subtitle": "汇总实验室在神经科学领域的代表性成果，包括理论研究与实证工作。",
+        "all": "全部",
+        "journals": "期刊论文",
+        "preprints": "预印本",
+        "sortBy": "排序方式",
+        "newest": "最新优先",
+        "oldest": "最早优先",
+        "empty": "当前筛选条件下暂无论文。",
+        "cta": "欢迎交流合作或数据申请。",
+        "ctaButton": "联系 BSD Lab"
+      },
+      "team": {
+        "kicker": "团队成员",
+        "title": "研究团队",
+        "subtitle": "我们由神经科学、工程与计算背景成员组成，协同探索脑状态动力学机制。",
+        "members": "实验室成员"
+      },
+      "footer": {
+        "publications": "论文发表",
+        "team": "团队成员",
+        "contact": "联系我们",
+        "subtitle": "脑状态动力学实验室",
+        "copyright": "© 2026 脑状态动力学实验室 版权所有。"
+      }
+    }
+  }
+}
