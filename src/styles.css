@@ -1275,6 +1275,29 @@ button {
   border-radius: 18px;
 }
 
+.news-article__figure {
+  margin: 34px 0 42px;
+}
+
+.news-article__figure img {
+  margin: 0;
+  border: 1px solid rgba(188, 185, 154, 0.2);
+  box-shadow: 0 18px 44px rgba(98, 83, 46, 0.1);
+}
+
+.news-article__figure--wide {
+  width: min(980px, calc(100vw - 48px));
+}
+
+.news-article__figure figcaption {
+  max-width: 760px;
+  margin-top: 12px;
+  padding-left: 2px;
+  color: rgba(98, 83, 46, 0.58);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
 .news-article blockquote {
   padding-left: 18px;
   border-left: 2px solid rgba(211, 145, 109, 0.42);
@@ -2898,6 +2921,15 @@ button {
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.site-shell[data-mode^="variant"] .news-article__figure img {
+  border-color: rgba(251, 250, 246, 0.16);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+.site-shell[data-mode^="variant"] .news-article__figure figcaption {
+  color: rgba(234, 237, 234, 0.58);
 }
 
 .site-shell[data-mode^="variant"] .update-item__link,
