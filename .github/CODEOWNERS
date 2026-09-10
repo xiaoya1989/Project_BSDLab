@@ -1,0 +1,10 @@
+# 网站负责人对所有合并到主分支的改动进行最终审核。
+* @xiaoya1989
+
+# 这些文件控制审核规则、部署、域名和依赖，必须由仓库所有者审核。
+/.github/ @xiaoya1989
+/src/ @xiaoya1989
+/package.json @xiaoya1989
+/package-lock.json @xiaoya1989
+/vite.config.js @xiaoya1989
+/CNAME @xiaoya1989

@@ -3,6 +3,7 @@ import { BrainWaveLogo, BackgroundWave } from "./components/BrainWaveLogo";
 import bibUrl from "../exported-references.bib?url";
 import annotationUrl from "../publications_annotation_template.csv?url";
 import publicationDoiOverrides from "./publication_doi_overrides.json";
+import siteContent from "../content/site-content.json";
 import groupPhoto from "../group_photo_20260415_new.jpg";
 import scnuLogo from "../SouthChinaNormalUniv_Logo.svg.png";
 import hanBiaoPhoto from "./assets/faculty/han-biao.jpg";
@@ -95,7 +96,7 @@ updatesByLang.zh = [
   },
 ];
 
-const hanProfile = {
+const fallbackHanProfile = {
   name: "Biao Han",
   nameCn: "\u97e9\u5f6a",
   role: "Principal Investigator",
@@ -112,7 +113,7 @@ const hanProfile = {
   website: "https://biaohan.org/",
 };
 
-const shenProfile = {
+const fallbackShenProfile = {
   name: "Lu Shen",
   nameCn: "\u6c88\u8def",
   role: "Principal Investigator",
@@ -128,7 +129,7 @@ const shenProfile = {
   ],
 };
 
-const copyByLang = {
+const fallbackCopyByLang = {
   en: {
     nav: { home: "Home", publications: "Publications", team: "Team", contact: "Contact" },
     hero: {
@@ -274,7 +275,7 @@ const copyByLang = {
   */
 };
 
-copyByLang.zh = {
+fallbackCopyByLang.zh = {
   nav: { home: "首页", publications: "论文发表", team: "团队成员", contact: "联系我们" },
   hero: {
     kicker: "Brain State Dynamics Lab",
@@ -346,6 +347,12 @@ copyByLang.zh = {
   },
 };
 
+// Student-facing content lives in content/site-content.json. These fallbacks
+// preserve the current page if that file is temporarily incomplete.
+const copyByLang = siteContent.copy || fallbackCopyByLang;
+const hanProfile = siteContent.faculty?.han || fallbackHanProfile;
+const shenProfile = siteContent.faculty?.shen || fallbackShenProfile;
+
 const manualPublications = [
   {
     id: "manual-jneurosci-2026-1171",
@@ -382,7 +389,8 @@ const manualPublications = [
 
 const memberProfileFiles = import.meta.glob("../team_members/*/profile.json", {
   eager: true,
-  as: "raw",
+  query: "?raw",
+  import: "default",
 });
 
 const memberPhotoFiles = import.meta.glob("../team_members/*/*.{jpg,jpeg,png,JPG,JPEG,PNG}", {
@@ -461,13 +469,16 @@ function parseTeamMemberRaw(raw, slug) {
   const nameCn = hasReadableChinese(nameCnRaw)
     ? nameCnRaw
     : teamMemberNameCnFallback[slugKey] || "";
-  const currentYear = new Date().getFullYear();
-  const slugKeyLower = slug.toLowerCase();
-  const roleOverrides = {
-    "dingxian-huang": currentYear >= 2026 ? "PhD Student" : "Prospective PhD Student",
-  };
-  const displayRole = roleOverrides[slugKeyLower] || "Master Student";
   const program = extractStringField(rawText, "program");
+  const roleFromProfile = extractStringField(rawText, "role");
+  const roleAliases = {
+    "MASTER STUDENT": "Master Student",
+    "PHD STUDENT": "PhD Student",
+    "DOCTORAL STUDENT": "PhD Student",
+    "POSTDOCTORAL RESEARCHER": "Postdoctoral Researcher",
+    ALUMNI: "Alumni",
+  };
+  const displayRole = roleAliases[roleFromProfile.toUpperCase()] || roleFromProfile || "Master Student";
   const email = extractStringField(rawText, "email");
   const bioShort = extractStringField(rawText, "bio_short");
   const bioLong = extractStringField(rawText, "bio_long");

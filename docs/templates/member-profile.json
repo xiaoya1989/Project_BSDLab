@@ -1,0 +1,20 @@
+{
+  "name": "Given Name Family Name",
+  "name_cn": "中文姓名",
+  "role": "MASTER STUDENT",
+  "program": "Neuroscience",
+  "enrollment_year": 2026,
+  "graduation_year": 2029,
+  "email": "name@example.edu.cn",
+  "keywords": [
+    "Research topic",
+    "Method"
+  ],
+  "bio_short": "One concise sentence for the member card.",
+  "bio_long": "A short paragraph describing research interests, methods, and current work.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": ""
+  }
+}
