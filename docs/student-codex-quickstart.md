@@ -42,7 +42,7 @@ docs/content-maintenance.md，然后概括本次任务允许修改的目录、
 
 ## 3. 每次更新的标准流程
 
-让 Codex按以下顺序处理：
+让 Codex 按以下顺序处理：
 
 1. 同步最新 `main`。
 2. 创建一个新的 `content/...` 分支。
