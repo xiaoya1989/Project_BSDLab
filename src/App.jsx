@@ -2233,9 +2233,9 @@ export default function App() {
         ) : (
           <>
             <Hero mode={mode} ui={ui} links={links} />
+            <UpdatesSection ui={ui} lang={lang} onNavigate={handleNavigate} posts={posts} />
             <WhatWeDoSection ui={ui} />
             <JoinUsSection ui={ui} />
-            <UpdatesSection ui={ui} lang={lang} onNavigate={handleNavigate} posts={posts} />
           </>
         )}
       <Footer ui={ui} links={links} />
