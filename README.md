@@ -14,7 +14,11 @@ Brain State Dynamics Lab（BSD Lab）官方网站源码。网站使用 React + V
 - `publications_annotation_template.csv`：论文筛选及作者标记
 - `src/publication_doi_overrides.json`：论文 DOI、作者、期刊或链接修正
 
-完整操作说明见 [`docs/content-maintenance.md`](docs/content-maintenance.md)。
+维护资料：
+
+- [`docs/student-codex-quickstart.md`](docs/student-codex-quickstart.md)：学生使用 Codex 的账号准备、提示词与提交流程。
+- [`docs/content-maintenance.md`](docs/content-maintenance.md)：各类网站内容的格式和维护规则。
+- [`AGENTS.md`](AGENTS.md)：Codex 自动读取的项目权限、隐私和检查要求。
 
 ## 推荐协作流程
 
