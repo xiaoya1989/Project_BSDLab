@@ -23,9 +23,10 @@ Brain State Dynamics Lab（BSD Lab）官方网站源码。网站使用 React + V
 1. 从最新 `main` 创建 `content/...` 分支。
 2. 只修改本次任务涉及的内容和图片。
 3. 提交 Pull Request，不直接提交到 `main`。
-4. 等待 `Validate and build` 自动检查通过。
-5. 由网站负责人审核并合并。
-6. 合并后 GitHub Pages 自动发布；启用微信密钥时，符合条件的新闻会进入微信公众号草稿箱。
+4. 等待 `Validate content and build` 自动检查通过。
+5. 学生主动把 Pull Request 链接和更新摘要发给网站负责人。
+6. 网站负责人审核；有问题时退回修改，学生在同一个 Pull Request 中修正并再次通知。
+7. 审核通过后由网站负责人合并。GitHub Pages 会自动发布；启用微信密钥时，符合条件的新闻会进入微信公众号草稿箱。
 
 ## 使用 Codex 更新网站
 
@@ -37,13 +38,48 @@ Brain State Dynamics Lab（BSD Lab）官方网站源码。网站使用 React + V
 4. 将下面的提示词连同本次更新要求发送给 Codex：
 
    ```text
-   请按照仓库根目录的 AGENTS.md 更新 BSD Lab 网站。先同步最新 main，并创建 content/<简短英文说明> 分支。只修改本次内容需要的文件；动态需要完整且事实一致的中英文标题、摘要和正文，图片只使用已确认可以公开的素材，并填写有意义的替代文字。完成后运行 npm run check，检查 git diff，只提交明确相关的文件，然后推送分支并创建 Pull Request 交给网站负责人审核。不要直接推送或合并 main，不要自行上线，也不要创建微信草稿。
+   请按照仓库根目录的 AGENTS.md 更新 BSD Lab 网站。先同步最新 main，并创建 content/<简短英文说明> 分支。只修改本次内容需要的文件；动态需要完整且事实一致的中英文标题、摘要和正文，图片只使用已确认可以公开的素材，并填写有意义的替代文字。完成后运行 npm run check，检查 git diff，只提交明确相关的文件，然后推送分支并创建 Pull Request 交给网站负责人审核。将 Pull Request 设为 Ready for review，并把链接、更新摘要、检查结果和需要确认的问题交给学生本人，不要直接推送或合并 main，不要自行上线，也不要创建微信草稿。
    ```
 
-5. Codex 完成后，学生检查中文、英文、图片和改动文件列表，将 Pull Request 链接发给网站负责人。
+5. Codex 完成后，学生检查中文、英文、图片和改动文件列表，按照下方格式主动通知网站负责人。
 6. 网站负责人审核并合并；学生不得自行绕过检查、批准或发布。
 
 Codex 会自动读取仓库中的 [`AGENTS.md`](AGENTS.md)，其中已经规定了学生可编辑范围、隐私要求、检查步骤和禁止直接发布的边界。相关机制可参考 [OpenAI 官方的 AGENTS.md 说明](https://learn.chatgpt.com/docs/agent-configuration/agents-md)。网页后台与 Codex 可以任选一种方式完成一次更新，但同一篇内容不要同时在两个入口编辑，以免产生冲突。
+
+## 学生提交后的通知与审核流程
+
+目前没有 Codex 自动监控或定时提醒。学生完成更新后必须主动通知网站负责人，不能只创建 Pull Request 后等待。无论使用网页编辑后台还是 Codex，最终都通过同一个 Pull Request 审核流程处理。
+
+学生应在以下时间通知负责人：
+
+- 第一次完成更新、把 Pull Request 设为 **Ready for review** 后。
+- 根据 **Request changes** 修改并重新提交后。
+- 自动检查失败且本人无法解决时；同时附上失败页面或错误说明。
+
+建议直接发送下面的信息：
+
+```text
+BSD Lab 网站更新已提交，请审核：
+- Pull Request：<链接>
+- 更新内容：<一句话说明>
+- 主要修改文件：<文件或栏目>
+- 图片、姓名及个人信息公开授权：已确认 / 不涉及 / 需要确认
+- npm run check：通过 / 未通过（请说明原因）
+- 需要负责人确认：无 / <具体问题>
+```
+
+Pull Request 列表：[`https://github.com/xiaoya1989/Project_BSDLab/pulls`](https://github.com/xiaoya1989/Project_BSDLab/pulls)。
+
+网站负责人收到通知后：
+
+1. 打开 Pull Request，确认提交者、更新摘要和修改范围。
+2. 等待 `Validate content and build` 显示通过；如失败，先查看失败步骤，不要合并。
+3. 在 **Files changed** 中核对中英文事实、日期和姓名，检查图片授权、隐私信息、图片路径及是否意外修改受保护文件。
+4. 有问题时选择 **Request changes** 并写清楚要改的内容。学生应继续在原 Pull Request 中修改，不要另建一个 Pull Request。
+5. 修改完成后重新检查；确认无误时选择 **Approve**，再由网站负责人合并。
+6. 合并后到 GitHub Actions 查看 **Deploy to GitHub Pages**，部署成功后打开正式网站核对对应页面。
+
+学生不能自行批准、合并或上线；网站负责人也应在收到学生通知并完成上述审核后再处理。
 
 ## 本地检查
 
