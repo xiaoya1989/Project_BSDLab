@@ -6,7 +6,7 @@ backend:
   auth_endpoint: auth
   site_domain: bsd-lab.org
   auth_scope: public_repo
-  open_authoring: true
+  open_authoring: false
   squash_merges: true
   use_graphql: true
   commit_messages:
