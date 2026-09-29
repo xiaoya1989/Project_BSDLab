@@ -81,7 +81,7 @@ collections:
         widget: image
         choose_url: false
         allow_multiple: false
-        hint: 建议使用清楚的横版图片；上传时会压缩并移除图片元数据。
+        hint: 可直接拖拽图片到上传区，或点击选择本地文件；无需填写 URL。建议使用清楚的横版图片，上传时会压缩并移除图片元数据。
         media_library:
           config:
             max_file_size: 1572864
@@ -91,7 +91,7 @@ collections:
         required: false
         choose_url: false
         allow_multiple: false
-        hint: 暂不创建微信草稿时可以留空。
+        hint: 可直接拖拽图片到上传区，或点击选择本地文件；无需填写 URL。暂不创建微信草稿时可以留空。
         media_library:
           config:
             max_file_size: 1572864
@@ -106,13 +106,15 @@ collections:
         widget: markdown
         modes: [rich_text, raw]
         minimal: false
-        hint: 插入图片时请填写能说明内容的替代文字，并在图片下方补充图注。
+        editor_components: [bsd-upload-image]
+        hint: 点击工具栏中的“拖拽上传图片”，把图片拖到上传区或选择本地文件；无需填写 URL。请填写能说明内容的替代文字。
       - label: English body
         name: body_en
         widget: markdown
         modes: [rich_text, raw]
         minimal: false
-        hint: Keep names, dates, organizations, and claims consistent with the Chinese version.
+        editor_components: [bsd-upload-image]
+        hint: Use “拖拽上传图片” in the toolbar, then drop an image into the upload area or choose a local file. Keep names, dates, organizations, and claims consistent with the Chinese version.
       - label: 创建微信草稿
         name: publish_to_wechat
         widget: hidden
