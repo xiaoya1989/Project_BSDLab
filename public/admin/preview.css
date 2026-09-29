@@ -86,3 +86,90 @@ body {
 .bsd-preview__header--en + .bsd-preview__body h2 {
   font-family: Georgia, serif;
 }
+
+.member-preview {
+  box-sizing: border-box;
+  width: min(720px, calc(100% - 32px));
+  margin: 32px auto;
+  padding: clamp(28px, 6vw, 64px);
+  border: 1px solid #dfe6df;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgb(27 55 43 / 8%);
+}
+
+.member-preview__header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dfe6df;
+}
+
+.member-preview__eyebrow {
+  margin: 0 0 0.6rem;
+  color: #5d7569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.member-preview h1 {
+  margin: 0;
+  color: #173b2d;
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  line-height: 1.1;
+}
+
+.member-preview__name-en {
+  margin: 0.45rem 0 0;
+  color: #355548;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.member-preview__program {
+  margin: 0.6rem 0 0;
+  color: #718078;
+}
+
+.member-preview__short {
+  margin: 2rem 0 1rem;
+  color: #274a3b;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.member-preview__long {
+  color: #465d53;
+}
+
+.member-preview__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member-preview__keywords li {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #edf3ef;
+  color: #315545;
+  font-size: 0.85rem;
+}
+
+.member-preview__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #dfe6df;
+  color: #52675e;
+  font-size: 0.9rem;
+}
+
+.member-preview__footer a {
+  color: #1f6046;
+}

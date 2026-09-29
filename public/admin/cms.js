@@ -3,8 +3,9 @@
 
   const CMS = window.CMS;
   const postFormat = window.BsdPostFormat;
+  const memberFormat = window.BsdMemberFormat;
 
-  if (!CMS || !postFormat) {
+  if (!CMS || !postFormat || !memberFormat) {
     document.body.innerHTML =
       '<main class="cms-loading"><div><strong>编辑器加载失败</strong>请刷新页面，或联系网站负责人。</div></main>';
     return;
@@ -13,6 +14,7 @@
   document.querySelector(".cms-loading")?.remove();
 
   CMS.registerCustomFormat("bsd-post", "md", postFormat);
+  CMS.registerCustomFormat("bsd-member-json", "json", memberFormat);
 
   const h = window.h;
 
@@ -53,7 +55,66 @@
     );
   }
 
+  function MemberPreview({ entry }) {
+    const keywords = entry.getIn(["data", "keywords"]);
+    const keywordItems = keywords?.toArray ? keywords.toArray() : [];
+    const links = [
+      ["Google Scholar", entry.getIn(["data", "links", "google_scholar"])],
+      ["个人网站", entry.getIn(["data", "links", "personal_website"])],
+      ["GitHub", entry.getIn(["data", "links", "github"])],
+    ].filter(([, url]) => url);
+
+    return h(
+      "article",
+      { className: "member-preview" },
+      h(
+        "header",
+        { className: "member-preview__header" },
+        h("p", { className: "member-preview__eyebrow" }, value(entry, "role")),
+        h("h1", null, value(entry, "name_cn")),
+        h("p", { className: "member-preview__name-en" }, value(entry, "name")),
+        h("p", { className: "member-preview__program" }, value(entry, "program")),
+      ),
+      h("p", { className: "member-preview__short" }, value(entry, "bio_short")),
+      h("p", { className: "member-preview__long" }, value(entry, "bio_long")),
+      keywordItems.length
+        ? h(
+            "ul",
+            { className: "member-preview__keywords" },
+            ...keywordItems.map((keyword) => h("li", { key: keyword }, keyword)),
+          )
+        : null,
+      h(
+        "footer",
+        { className: "member-preview__footer" },
+        h("span", null, value(entry, "email")),
+        ...links.map(([label, url]) =>
+          h("a", { href: url, key: label, rel: "noreferrer" }, label),
+        ),
+      ),
+    );
+  }
+
+  const memberProfileEntries = [
+    "jianan-zhu",
+    "mingxia-yang",
+    "tingyu-zhou",
+    "dingxian-huang",
+    "dongdong-chen",
+    "eve-zeng",
+    "shengpei-zhao",
+    "wei-song",
+    "xiaoyu-deng",
+    "xuantao-zhang",
+    "yihua-chen",
+    "yue-pan",
+    "yuxiang-ma",
+  ];
+
   CMS.registerPreviewStyle("/admin/preview.css");
   CMS.registerPreviewTemplate("posts", PostPreview);
+  memberProfileEntries.forEach((entryName) => {
+    CMS.registerPreviewTemplate(entryName, MemberPreview);
+  });
   CMS.init();
 })();

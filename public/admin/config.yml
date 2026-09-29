@@ -117,3 +117,126 @@ collections:
         name: publish_to_wechat
         widget: hidden
         default: false
+
+  - name: member_profiles
+    label: 成员资料管理
+    label_singular: 成员资料
+    description: 供指定的网站内容编辑统一维护成员公开资料。请选择需要更新的成员，每次只处理一份明确的修改申请，并提交给网站负责人审核。
+    format: bsd-member-json
+    editor:
+      preview: true
+    files:
+      - name: jianan-zhu
+        label: 朱嘉楠 / Jianan Zhu
+        file: team_members/Jianan-Zhu/profile.json
+        fields: &member_profile_fields
+          - label: 英文姓名
+            name: name
+            widget: string
+            hint: 用于英文页面，请使用公开使用的姓名拼写。
+          - label: 中文姓名
+            name: name_cn
+            widget: string
+          - label: 成员身份
+            name: role
+            widget: select
+            options:
+              - { label: 硕士生 / Master Student, value: MASTER STUDENT }
+              - { label: 博士生 / PhD Student, value: PHD STUDENT }
+              - { label: 博士后 / Postdoctoral Researcher, value: POSTDOCTORAL RESEARCHER }
+              - { label: 往届成员 / Alumni, value: ALUMNI }
+          - label: 专业或研究方向
+            name: program
+            widget: string
+            hint: 建议使用简短的英文名称，例如 Neuroscience。
+          - label: 入学年份
+            name: enrollment_year
+            widget: number
+            value_type: int
+            min: 1900
+            max: 2200
+            required: false
+          - label: 毕业年份
+            name: graduation_year
+            widget: number
+            value_type: int
+            min: 1900
+            max: 2200
+            required: false
+          - label: 公开邮箱
+            name: email
+            widget: string
+            hint: 此邮箱会显示在公开网站上，请只填写确认可以公开的地址。
+            pattern:
+              - '^[^ @]+@[^ @]+[.][^ @]+$'
+              - 请输入有效的邮箱地址。
+          - label: 研究关键词
+            name: keywords
+            widget: list
+            min: 1
+            max: 8
+            hint: 每个关键词按回车确认，建议使用英文。
+          - label: 卡片简介
+            name: bio_short
+            widget: text
+            hint: 一句简洁的英文介绍，显示在团队成员卡片上。
+          - label: 详细简介
+            name: bio_long
+            widget: text
+            hint: 一小段英文介绍，可包括研究问题、方法和当前课题；不要填写未公开研究结果。
+          - label: 公开链接
+            name: links
+            widget: object
+            collapsed: false
+            fields:
+              - { label: Google Scholar, name: google_scholar, widget: string, required: false }
+              - { label: 个人网站, name: personal_website, widget: string, required: false }
+              - { label: GitHub, name: github, widget: string, required: false }
+      - name: mingxia-yang
+        label: 杨铭霞 / Mingxia Yang
+        file: team_members/Mingxia-Yang/profile.json
+        fields: *member_profile_fields
+      - name: tingyu-zhou
+        label: 周廷玉 / Tingyu Zhou
+        file: team_members/Tingyu-Zhou/profile.json
+        fields: *member_profile_fields
+      - name: dingxian-huang
+        label: 黄定贤 / Dingxian Huang
+        file: team_members/dingxian-huang/profile.json
+        fields: *member_profile_fields
+      - name: dongdong-chen
+        label: 陈冬冬 / Dongdong Chen
+        file: team_members/dongdong-chen/profile.json
+        fields: *member_profile_fields
+      - name: eve-zeng
+        label: 曾奕彤 / Yitong Zeng
+        file: team_members/eve-zeng/profile.json
+        fields: *member_profile_fields
+      - name: shengpei-zhao
+        label: 赵晟培 / Shengpei Zhao
+        file: team_members/shengpei-zhao/profile.json
+        fields: *member_profile_fields
+      - name: wei-song
+        label: 宋伟 / Wei Song
+        file: team_members/wei-song/profile.json
+        fields: *member_profile_fields
+      - name: xiaoyu-deng
+        label: 邓晓雨 / Xiaoyu Deng
+        file: team_members/xiaoyu-deng/profile.json
+        fields: *member_profile_fields
+      - name: xuantao-zhang
+        label: 张轩涛 / Xuantao Zhang
+        file: team_members/xuantao-zhang/profile.json
+        fields: *member_profile_fields
+      - name: yihua-chen
+        label: 陈依华 / Yihua Chen
+        file: team_members/yihua-chen/profile.json
+        fields: *member_profile_fields
+      - name: yue-pan
+        label: 潘玥 / Yue Pan
+        file: team_members/yue-pan/profile.json
+        fields: *member_profile_fields
+      - name: yuxiang-ma
+        label: 马宇翔 / Yuxiang Ma
+        file: team_members/yuxiang-ma/profile.json
+        fields: *member_profile_fields
