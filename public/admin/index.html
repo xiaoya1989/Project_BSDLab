@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>BSD Lab 内容编辑后台</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: #f4f6f2;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .cms-loading {
+        box-sizing: border-box;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 2rem;
+        color: #254438;
+        text-align: center;
+      }
+
+      .cms-loading strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.15rem;
+      }
+    </style>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+  </head>
+  <body>
+    <div class="cms-loading">
+      <div>
+        <strong>BSD Lab 内容编辑后台</strong>
+        正在加载编辑器……
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.16.3/dist/decap-cms.js"></script>
+    <script src="/admin/post-format.js"></script>
+    <script src="/admin/cms.js"></script>
+  </body>
+</html>
