@@ -4,8 +4,9 @@
   const CMS = window.CMS;
   const postFormat = window.BsdPostFormat;
   const memberFormat = window.BsdMemberFormat;
+  const postImageComponent = window.BsdPostImageComponent;
 
-  if (!CMS || !postFormat || !memberFormat) {
+  if (!CMS || !postFormat || !memberFormat || !postImageComponent) {
     document.body.innerHTML =
       '<main class="cms-loading"><div><strong>编辑器加载失败</strong>请刷新页面，或联系网站负责人。</div></main>';
     return;
@@ -15,6 +16,7 @@
 
   CMS.registerCustomFormat("bsd-post", "md", postFormat);
   CMS.registerCustomFormat("bsd-member-json", "json", memberFormat);
+  CMS.registerEditorComponent(postImageComponent.definition);
 
   const h = window.h;
 
