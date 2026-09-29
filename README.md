@@ -4,6 +4,8 @@ Brain State Dynamics Lab（BSD Lab）官方网站源码。网站使用 React + V
 
 ## 学生维护入口
 
+网页编辑后台：[`https://bsd-lab.org/admin/`](https://bsd-lab.org/admin/)。建议指定 1–2 名学生担任网站内容编辑，在后台维护实验室动态和成员资料；所有改动仍通过 Pull Request 交由网站负责人审核。
+
 学生日常只需要维护以下内容：
 
 - `content/posts/`：实验室动态、活动、招生与项目新闻
