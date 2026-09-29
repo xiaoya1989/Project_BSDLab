@@ -23,12 +23,18 @@ npx wrangler secret put GITHUB_CLIENT_SECRET
 npm run deploy
 ```
 
-After the first deployment, either attach the custom domain `auth.bsd-lab.org` in Cloudflare or replace `backend.base_url` in `public/admin/config.yml` with the assigned `workers.dev` URL.
+The production editor currently uses this Worker URL:
+
+```text
+https://bsd-lab-cms-auth.393649680.workers.dev
+```
+
+Keep `backend.base_url` in `public/admin/config.yml` synchronized with the deployed Worker URL. A custom domain such as `auth.bsd-lab.org` can be attached later if the website DNS is moved to Cloudflare.
 
 The GitHub OAuth App callback URL must be:
 
 ```text
-https://auth.bsd-lab.org/callback
+https://bsd-lab-cms-auth.393649680.workers.dev/callback
 ```
 
-If a `workers.dev` URL is used instead, use its `/callback` URL exactly.
+If the Worker domain changes, update this callback URL in the GitHub OAuth App at the same time.

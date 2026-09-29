@@ -56,10 +56,10 @@ Decap CMS 的 Open Authoring 模式会把无仓库写权限用户的改动放在
 
 ## 一次性登录配置（网站负责人）
 
-GitHub 登录需要一个服务端 OAuth 中转，不能把 GitHub Client Secret 放进本仓库。后台已预留以下地址：
+GitHub 登录需要一个服务端 OAuth 中转，不能把 GitHub Client Secret 放进本仓库。当前生产地址为：
 
 ```text
-https://auth.bsd-lab.org/auth
+https://bsd-lab-cms-auth.393649680.workers.dev/auth
 ```
 
 上线前需要完成：
@@ -68,7 +68,7 @@ https://auth.bsd-lab.org/auth
 2. Homepage URL 填 `https://bsd-lab.org`。
 3. Authorization callback URL 填 OAuth 中转服务给出的 callback 地址。
 4. 在 Cloudflare Worker（或其他受控服务端）中设置 `GITHUB_CLIENT_ID` 和 `GITHUB_CLIENT_SECRET`；它们只能作为服务端 Secret 保存，不能提交到 Git。
-5. 将 `auth.bsd-lab.org` 指向该 OAuth 中转服务。
+5. 当前使用 Cloudflare 提供的 `workers.dev` 地址；以后如将网站 DNS 接入 Cloudflare，可再选配 `auth.bsd-lab.org` 自定义域名，并同步修改后台配置与 GitHub callback 地址。
 6. 用一个没有仓库写权限的测试 GitHub 账号完整验证“新建草稿 → Ready to Review → Pull Request → 审核 → 合并 → 部署”。
 
 如不希望维护 OAuth 中转，也可以改用 Decap Turbo 托管登录；它需要单独建立 Decap Turbo 组织和站点，团队席位可能产生费用。
