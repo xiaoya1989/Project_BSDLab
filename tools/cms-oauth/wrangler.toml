@@ -1,0 +1,7 @@
+name = "bsd-lab-cms-auth"
+main = "src/index.js"
+compatibility_date = "2026-09-29"
+workers_dev = true
+
+[vars]
+CMS_ORIGIN = "https://bsd-lab.org"

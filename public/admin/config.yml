@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: xiaoya1989/Project_BSDLab
+  branch: main
+  base_url: https://auth.bsd-lab.org
+  auth_endpoint: auth
+  site_domain: bsd-lab.org
+  auth_scope: public_repo
+  open_authoring: true
+  squash_merges: true
+  use_graphql: true
+  commit_messages:
+    create: '内容：新建“{{slug}}”'
+    update: '内容：更新“{{slug}}”'
+    delete: '内容：删除“{{slug}}”'
+    uploadMedia: '图片：上传“{{path}}”'
+    deleteMedia: '图片：删除“{{path}}”'
+    openAuthoring: '{{message}}（{{author-login}} 提交）'
+
+site_url: https://bsd-lab.org
+display_url: https://bsd-lab.org
+locale: zh_Hans
+publish_mode: editorial_workflow
+
+media_folder: public/posts/uploads
+public_folder: /posts/uploads
+media_processing:
+  enabled: true
+  quality: 85
+  strip_metadata: true
+
+collections:
+  - name: posts
+    label: 实验室动态
+    label_singular: 动态文章
+    description: 编辑中英文动态、上传配图，并提交给网站负责人审核。
+    folder: content/posts
+    create: true
+    delete: false
+    extension: md
+    format: bsd-post
+    identifier_field: title_zh
+    slug: '{{fields.slug}}'
+    media_folder: /public/posts/{{slug}}
+    public_folder: /posts/{{slug}}
+    preview_path: '?lang=zh#/news/{{fields.slug}}'
+    preview_path_date_field: date
+    summary: '{{date}} · {{title_zh}} / {{title_en}}'
+    sortable_fields: [date, title_zh, title_en]
+    fields:
+      - label: 文章网址标识
+        name: slug
+        widget: string
+        hint: 只用英文小写字母、数字和连字符，例如 meg-method-workshop。保存后请不要修改。
+        pattern:
+          - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          - 请输入英文小写字母、数字和单个连字符。
+      - label: 活动日期
+        name: date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        picker_utc: true
+      - label: 中文标题
+        name: title_zh
+        widget: string
+      - label: English title
+        name: title_en
+        widget: string
+      - label: 中文摘要
+        name: summary_zh
+        widget: text
+        hint: 建议一至两句话，用于首页动态卡片。
+      - label: English summary
+        name: summary_en
+        widget: text
+        hint: Keep the facts consistent with the Chinese summary.
+      - label: 封面图片
+        name: cover_image
+        widget: image
+        choose_url: false
+        allow_multiple: false
+        hint: 建议使用清楚的横版图片；上传时会压缩并移除图片元数据。
+        media_library:
+          config:
+            max_file_size: 1572864
+      - label: 微信封面图片
+        name: wechat_cover_image
+        widget: image
+        required: false
+        choose_url: false
+        allow_multiple: false
+        hint: 暂不创建微信草稿时可以留空。
+        media_library:
+          config:
+            max_file_size: 1572864
+      - label: 内容标签
+        name: tags
+        widget: list
+        min: 1
+        max: 6
+        hint: 每个标签按回车确认，例如 academic lecture、MEG。
+      - label: 中文正文
+        name: body_zh
+        widget: markdown
+        modes: [rich_text, raw]
+        minimal: false
+        hint: 插入图片时请填写能说明内容的替代文字，并在图片下方补充图注。
+      - label: English body
+        name: body_en
+        widget: markdown
+        modes: [rich_text, raw]
+        minimal: false
+        hint: Keep names, dates, organizations, and claims consistent with the Chinese version.
+      - label: 创建微信草稿
+        name: publish_to_wechat
+        widget: hidden
+        default: false
