@@ -1,7 +1,7 @@
 ﻿{
     "name":  "Wei Song",
     "name_cn":  "宋伟",
-    "role":  "MASTER STUDENT",
+    "role":  "ALUMNI",
     "program":  "Neuroscience",
     "enrollment_year":  2023,
     "graduation_year":  2026,
@@ -11,8 +11,8 @@
                      "CCEP",
                      "iEEG"
                  ],
-    "bio_short":  "Cognitive neuroscience graduate student.",
-    "bio_long":  "Wei is a master\u0027s student in cognitive neuroscience, focusing on the neural mechanisms of information transmission in the human brain. His research combines stereotactic intracranial EEG (sEEG) and cortico-cortical evoked potentials (CCEP) to investigate large-scale brain network dynamics from a causal intervention perspective.",
+    "bio_short":  "BSD Lab alum continuing his research training at the Donders Institute under Prof. Floris de Lange.",
+    "bio_long":  "Wei Song completed his master's training in cognitive neuroscience at South China Normal University, where he studied information transmission and large-scale brain network dynamics using sEEG and cortico-cortical evoked potentials. He is continuing his research training at the Donders Institute for Brain, Cognition and Behaviour under the supervision of Prof. Floris de Lange.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",

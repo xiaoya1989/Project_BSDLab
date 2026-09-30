@@ -1,7 +1,7 @@
 ﻿{
     "name":  "Dongdong Chen",
     "name_cn":  "陈冬冬",
-    "role":  "MASTER STUDENT",
+    "role":  "ALUMNI",
     "program":  "Applied Psychology (Cognitive Neuroscience)",
     "enrollment_year":  2024,
     "graduation_year":  2026,
@@ -12,8 +12,8 @@
                      "Music Cognition",
                      "EEG"
                  ],
-    "bio_short":  "Researching neural encoding of music tension using EEG and computational modeling.",
-    "bio_long":  "I am a Master\u0027s student in Applied Psychology focusing on cognitive neuroscience. My research investigates the neural encoding of music tension during naturalistic listening using EEG. I combine computational modeling with methods such as inter-subject correlation and temporal response functions to study dynamic emotional processing in music.",
+    "bio_short":  "BSD Lab alum who studied the neural encoding of musical tension using EEG and computational modeling.",
+    "bio_long":  "Dongdong Chen completed a master's degree in Applied Psychology at South China Normal University. The research investigated the neural encoding of musical tension during naturalistic listening using EEG, computational modeling, inter-subject correlation, and temporal response functions.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",

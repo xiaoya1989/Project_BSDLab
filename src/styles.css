@@ -1712,6 +1712,10 @@ button {
   gap: 26px 16px;
 }
 
+.team-fellows--alumni {
+  margin-top: 72px;
+}
+
 @media (min-width: 880px) {
   .team-fellows__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));

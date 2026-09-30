@@ -1777,7 +1777,36 @@ function PublicationsPage({ items, ui, links }) {
   );
 }
 
+function TeamMemberGrid({ members }) {
+  return (
+    <div className="team-fellows__grid">
+      {members.map((member) => (
+        <article className="team-fellow-card" key={member.id}>
+          <div className="team-fellow-card__image-wrap">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="team-fellow-card__image"
+              style={
+                member.id === "dingxian-huang"
+                  ? { objectPosition: "50% 42%" }
+                  : undefined
+              }
+            />
+          </div>
+          <h5>{member.name}</h5>
+          {member.nameCn ? <p className="team-fellow-card__name-cn">{member.nameCn}</p> : null}
+          <p className="team-fellow-card__role">{member.interest}</p>
+          <div className="team-fellow-card__bio-wrap" data-bio={member.bioLong} aria-label="Bio preview area" />
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function TeamPage({ ui, links }) {
+  const currentMembers = teamMembers.filter((member) => member.role !== "Alumni");
+  const alumni = teamMembers.filter((member) => member.role === "Alumni");
   const faculty = [
     {
       profile: hanProfile,
@@ -1875,29 +1904,18 @@ function TeamPage({ ui, links }) {
           <h4>{ui.team.members}</h4>
           <div className="team-fellows__line" />
         </div>
-        <div className="team-fellows__grid">
-          {teamMembers.map((member) => (
-            <article className="team-fellow-card" key={member.id}>
-              <div className="team-fellow-card__image-wrap">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="team-fellow-card__image"
-                  style={
-                    member.id === "dingxian-huang"
-                      ? { objectPosition: "50% 42%" }
-                      : undefined
-                  }
-                />
-              </div>
-              <h5>{member.name}</h5>
-              {member.nameCn ? <p className="team-fellow-card__name-cn">{member.nameCn}</p> : null}
-              <p className="team-fellow-card__role">{member.interest}</p>
-              <div className="team-fellow-card__bio-wrap" data-bio={member.bioLong} aria-label="Bio preview area" />
-            </article>
-          ))}
-        </div>
+        <TeamMemberGrid members={currentMembers} />
       </section>
+
+      {alumni.length ? (
+        <section className="team-fellows team-fellows--alumni">
+          <div className="team-fellows__heading">
+            <h4>{ui.team.alumni || "Alumni"}</h4>
+            <div className="team-fellows__line" />
+          </div>
+          <TeamMemberGrid members={alumni} />
+        </section>
+      ) : null}
     </main>
   );
 }

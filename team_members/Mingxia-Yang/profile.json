@@ -1,7 +1,7 @@
 ﻿{
     "name":  "Mingxia Yang",
     "name_cn":  "杨铭霞",
-    "role":  "MASTER STUDENT",
+    "role":  "ALUMNI",
     "program":  "Neuroscience",
     "enrollment_year":  2023,
     "graduation_year":  2026,
@@ -11,8 +11,8 @@
                      "Episodic Memory",
                      "fMRI"
                  ],
-    "bio_short":  "Master鈥檚 student in neuroscience studying fMRI-based replay mechanisms in episodic memory.",
-    "bio_long":  "I study how the brain replays and reconstructs episodic memories using fMRI. My research explores temporal dynamics of neural representations and replay processes. Beyond research, I enjoy street dance, reading feminist literature, and offering psychological support.",
+    "bio_short":  "BSD Lab alum whose master's research examined fMRI-based replay mechanisms in episodic memory.",
+    "bio_long":  "Mingxia Yang completed a master's degree in neuroscience at South China Normal University. The research examined how the brain replays and reconstructs episodic memories using fMRI, with a focus on the temporal dynamics of neural representations and replay processes.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",
