@@ -6,6 +6,7 @@ title_en: "English title"
 summary_zh: "一至两句话的中文摘要。"
 summary_en: "A one- or two-sentence English summary."
 cover_image: /posts/replace-with-english-slug/cover.jpg
+cover_link: ""
 wechat_cover_image: /posts/replace-with-english-slug/cover.jpg
 tags:
   - lab update

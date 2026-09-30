@@ -6,6 +6,7 @@ title_en: "BSD-LAB AI Platform Now Open"
 summary_zh: "BSD-LAB AI 工作空间现已正式开放，为实验室成员提供问答、图片与文档分析、论文写作辅助和编程等功能。"
 summary_en: "The BSD-LAB AI workspace is now open, giving lab members access to question answering, image and document analysis, academic writing support, programming, and more."
 cover_image: /posts/bsd-lab-ai-launch/cover.svg
+cover_link: https://ai.bsd-lab.org/
 wechat_cover_image: /posts/bsd-lab-ai-launch/cover.svg
 tags:
   - AI platform

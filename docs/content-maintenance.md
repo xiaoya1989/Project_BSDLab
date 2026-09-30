@@ -74,6 +74,7 @@ git status
    ```
 
 6. 默认保持 `publish_to_wechat: false`。只有确认需要同步到微信公众号草稿箱时才改为 `true`。
+7. 如需让动态正文页的整张封面跳转到外部页面，在 `cover_link` 填写完整的 `https://` 地址；不需要跳转时留空。
 
 图片建议：
 

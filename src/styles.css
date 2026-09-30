@@ -1276,6 +1276,25 @@ button {
   height: auto;
 }
 
+.news-page__cover--linked {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.news-page__cover--linked:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 52px rgba(98, 83, 46, 0.16);
+}
+
+.news-page__cover-link {
+  display: block;
+  cursor: pointer;
+}
+
+.news-page__cover-link:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: -5px;
+}
+
 .news-article {
   max-width: 780px;
   color: rgba(98, 83, 46, 0.88);

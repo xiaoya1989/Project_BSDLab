@@ -42,6 +42,18 @@ function normalizeArray(value) {
   return [];
 }
 
+function normalizeHttpUrl(value) {
+  const candidate = normalizeString(value);
+  if (!candidate) return "";
+
+  try {
+    const url = new URL(candidate);
+    return url.protocol === "https:" ? url.toString() : "";
+  } catch {
+    return "";
+  }
+}
+
 function slugify(value = "") {
   return value
     .toLowerCase()
@@ -168,6 +180,7 @@ export function parsePostFile(raw, sourcePath = "") {
     bodyZh,
     bodyEn,
     coverImage: normalizeString(data.cover_image),
+    coverLink: normalizeHttpUrl(data.cover_link),
     wechatCoverImage: normalizeString(data.wechat_cover_image) || normalizeString(data.cover_image),
     tags: normalizeArray(data.tags),
     publishToWechat: normalizeBoolean(data.publish_to_wechat, false),
