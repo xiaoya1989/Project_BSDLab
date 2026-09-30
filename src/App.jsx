@@ -1497,8 +1497,21 @@ function NewsPage({ post, lang, onNavigate }) {
       </section>
 
       {post.coverImage ? (
-        <figure className="news-page__cover">
-          <img src={post.coverImage} alt={post.title} />
+        <figure className={`news-page__cover ${post.coverLink ? "news-page__cover--linked" : ""}`}>
+          {post.coverLink ? (
+            <a
+              className="news-page__cover-link"
+              href={post.coverLink}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={isZh ? `点击封面访问${post.title}相关页面` : `Open the page linked from ${post.title}`}
+              title={isZh ? "点击封面访问平台" : "Click the cover to visit the platform"}
+            >
+              <img src={post.coverImage} alt={post.title} />
+            </a>
+          ) : (
+            <img src={post.coverImage} alt={post.title} />
+          )}
         </figure>
       ) : null}
 

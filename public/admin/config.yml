@@ -95,6 +95,14 @@ collections:
         media_library:
           config:
             max_file_size: 1572864
+      - label: 封面跳转链接
+        name: cover_link
+        widget: string
+        required: false
+        hint: 如需让动态正文页的整张封面可以点击，请填写完整的 https:// 地址；不需要跳转时留空。
+        pattern:
+          - '^https://[^\s]+$'
+          - 请输入完整的 https:// 地址。
       - label: 内容标签
         name: tags
         widget: list

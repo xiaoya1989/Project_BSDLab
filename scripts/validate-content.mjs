@@ -144,6 +144,9 @@ async function validatePosts() {
     }
 
     await validatePublicAsset(filePath, data.cover_image, "cover_image");
+    if (isNonEmptyString(data.cover_link) && !/^https:\/\/[^\s]+$/i.test(data.cover_link.trim())) {
+      addError(filePath, "cover_link 必须使用完整的 https:// 地址");
+    }
     if (isNonEmptyString(data.wechat_cover_image)) {
       await validatePublicAsset(filePath, data.wechat_cover_image, "wechat_cover_image");
     } else if (data.publish_to_wechat === true) {
