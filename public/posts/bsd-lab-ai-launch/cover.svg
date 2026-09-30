@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">BSD-LAB AI 平台正式开放使用</title>
+  <desc id="desc">BSD Lab AI 工作空间发布封面，米白色背景上带有抽象脑状态轨迹和平台名称。</desc>
+  <defs>
+    <radialGradient id="orb" cx="38%" cy="32%" r="72%">
+      <stop offset="0" stop-color="#eee8d9"/>
+      <stop offset="1" stop-color="#b9b7a9"/>
+    </radialGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f4e9"/>
+      <stop offset="1" stop-color="#eee8d8"/>
+    </linearGradient>
+    <clipPath id="sphere">
+      <circle cx="1220" cy="430" r="265"/>
+    </clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <path d="M0 702C242 616 311 825 558 722S941 573 1600 691" fill="none" stroke="#d3af6b" stroke-width="3" opacity=".42"/>
+  <path d="M0 748C276 656 385 853 655 733S1110 628 1600 744" fill="none" stroke="#bf7f69" stroke-width="2" opacity=".28"/>
+  <circle cx="1220" cy="430" r="332" fill="none" stroke="#8d897b" stroke-opacity=".14" stroke-width="2"/>
+  <circle cx="1220" cy="430" r="299" fill="none" stroke="#8d897b" stroke-opacity=".2" stroke-width="2" stroke-dasharray="4 15"/>
+  <circle cx="1220" cy="430" r="265" fill="url(#orb)"/>
+  <g clip-path="url(#sphere)" fill="none">
+    <path d="M848 455C1014 72 1095 786 1265 406S1456 176 1600 428" stroke="#f7f0df" stroke-width="6"/>
+    <path d="M858 285C1060 218 1072 592 1321 413S1546 502 1610 279" stroke="#bd7d68" stroke-width="14" opacity=".82"/>
+    <path d="M838 642C1012 749 1173 557 1364 520S1516 326 1613 334" stroke="#d2ad69" stroke-width="22"/>
+    <path d="M852 374C1044 382 1007 682 1258 626S1484 554 1608 735" stroke="#fbf6ea" stroke-width="42" opacity=".42"/>
+  </g>
+  <circle cx="1220" cy="430" r="265" fill="none" stroke="#f4eddd" stroke-opacity=".72" stroke-width="2"/>
+  <circle cx="1495" cy="246" r="8" fill="#d2ad69"/>
+  <g fill="#62532e" font-family="Inter, Noto Sans SC, Arial, sans-serif">
+    <text x="120" y="132" font-size="25" font-weight="700" letter-spacing="5">BRAIN STATE DYNAMICS LAB</text>
+    <text x="120" y="318" font-size="104" font-weight="700" letter-spacing="-3">BSD-LAB AI</text>
+    <text x="120" y="405" font-size="48" font-weight="500">工作空间正式开放</text>
+    <text x="120" y="475" font-size="25" font-weight="400" opacity=".74">A workspace for thinking, building &amp; discovery.</text>
+  </g>
+  <g transform="translate(120 576)">
+    <rect width="387" height="68" rx="34" fill="#62532e"/>
+    <text x="36" y="44" fill="#f7f1e4" font-family="Inter, Noto Sans SC, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="1">ai.bsd-lab.org</text>
+    <path d="M337 24l18 10-18 10M353 34h-31" fill="none" stroke="#d3af6b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="120" y="815" fill="#62532e" fill-opacity=".6" font-family="Inter, Noto Sans SC, Arial, sans-serif" font-size="21" letter-spacing="2">QUESTION ANSWERING · DOCUMENTS · WRITING · CODE</text>
+</svg>
