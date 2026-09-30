@@ -60,6 +60,20 @@
   function MemberPreview({ entry }) {
     const keywords = entry.getIn(["data", "keywords"]);
     const keywordItems = keywords?.toArray ? keywords.toArray() : [];
+    const enrollmentYear = value(entry, "enrollment_year");
+    const graduationYear = value(entry, "graduation_year");
+    const mastersEnrollmentYear = value(entry, "masters_enrollment_year");
+    const mastersGraduationYear = value(entry, "masters_graduation_year");
+    const destination = value(entry, "next_destination");
+    const metaItems = [];
+    if (mastersEnrollmentYear) {
+      metaItems.push(`MSc ${mastersEnrollmentYear}–${mastersGraduationYear || ""}`);
+    }
+    if (enrollmentYear) {
+      const prefix = mastersEnrollmentYear && value(entry, "role") === "PHD STUDENT" ? "PhD " : "";
+      metaItems.push(`${prefix}${enrollmentYear}–${graduationYear || ""}`);
+    }
+    if (destination) metaItems.push(`→ ${destination}`);
     const links = [
       ["Google Scholar", entry.getIn(["data", "links", "google_scholar"])],
       ["个人网站", entry.getIn(["data", "links", "personal_website"])],
@@ -76,6 +90,13 @@
         h("h1", null, value(entry, "name_cn")),
         h("p", { className: "member-preview__name-en" }, value(entry, "name")),
         h("p", { className: "member-preview__program" }, value(entry, "program")),
+        metaItems.length
+          ? h(
+              "ul",
+              { className: "member-preview__keywords" },
+              ...metaItems.map((item) => h("li", { key: item }, item)),
+            )
+          : null,
       ),
       h("p", { className: "member-preview__short" }, value(entry, "bio_short")),
       h("p", { className: "member-preview__long" }, value(entry, "bio_long")),
