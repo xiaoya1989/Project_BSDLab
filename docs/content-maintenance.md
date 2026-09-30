@@ -112,6 +112,8 @@ git status
 
 将 `role` 设置为 `ALUMNI` 后，该成员会自动从“在读成员 / Current Members”移动到单独的“毕业成员 / Alumni”分组。
 
+团队成员卡片会把 `enrollment_year` 与 `graduation_year` 显示为姓名后的年份标签。毕业成员如填写 `next_destination`，还会显示毕业后去向；若同一成员需要同时展示在实验室的硕士、博士经历，可补充 `masters_enrollment_year` 与 `masters_graduation_year`。
+
 ### 添加新成员
 
 1. 在 `team_members/` 新建英文小写目录，例如 `lin-zhang/`。

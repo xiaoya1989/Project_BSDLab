@@ -173,6 +173,27 @@ collections:
             min: 1900
             max: 2200
             required: false
+          - label: 前一培养阶段入学年份
+            name: masters_enrollment_year
+            widget: number
+            value_type: int
+            min: 1900
+            max: 2200
+            required: false
+            hint: 仅在同一成员需要同时展示硕士、博士两个阶段时填写。
+          - label: 前一培养阶段毕业年份
+            name: masters_graduation_year
+            widget: number
+            value_type: int
+            min: 1900
+            max: 2200
+            required: false
+            hint: 仅在同一成员需要同时展示硕士、博士两个阶段时填写。
+          - label: 毕业后去向
+            name: next_destination
+            widget: string
+            required: false
+            hint: 仅填写已确认可以公开的机构名称，例如 Donders Institute。
           - label: 公开邮箱
             name: email
             widget: string

@@ -1781,6 +1781,32 @@ button {
   color: rgba(98, 83, 46, 0.68);
 }
 
+.team-fellow-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0 8px;
+}
+
+.team-fellow-card__meta span {
+  max-width: 100%;
+  padding: 2px 7px;
+  border: 1px solid rgba(188, 185, 154, 0.42);
+  border-radius: 999px;
+  background: rgba(188, 185, 154, 0.1);
+  color: rgba(98, 83, 46, 0.78);
+  font-size: 0.58rem;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.team-fellow-card__meta span[data-kind="destination"] {
+  border-color: rgba(211, 145, 109, 0.32);
+  background: rgba(211, 145, 109, 0.1);
+  color: rgba(157, 91, 58, 0.9);
+}
+
 .team-fellow-card__role {
   color: rgba(211, 145, 109, 0.78);
   font-size: 0.58rem;
@@ -2875,6 +2901,18 @@ button {
 
 .site-shell[data-mode^="variant"] .team-fellow-card__role {
   color: rgba(239, 173, 142, 0.9);
+}
+
+.site-shell[data-mode^="variant"] .team-fellow-card__meta span {
+  border-color: rgba(251, 250, 246, 0.22);
+  background: rgba(245, 241, 233, 0.08);
+  color: rgba(245, 241, 233, 0.84);
+}
+
+.site-shell[data-mode^="variant"] .team-fellow-card__meta span[data-kind="destination"] {
+  border-color: rgba(239, 173, 142, 0.34);
+  background: rgba(239, 173, 142, 0.1);
+  color: rgba(255, 199, 171, 0.94);
 }
 
 .site-shell[data-mode^="variant"] .team-fellows__line {

@@ -485,6 +485,9 @@ function parseTeamMemberRaw(raw, slug) {
   const keywords = extractKeywordList(rawText);
   const enrollmentYear = extractNumberField(rawText, "enrollment_year");
   const graduationYear = extractNumberField(rawText, "graduation_year");
+  const mastersEnrollmentYear = extractNumberField(rawText, "masters_enrollment_year");
+  const mastersGraduationYear = extractNumberField(rawText, "masters_graduation_year");
+  const nextDestination = extractStringField(rawText, "next_destination");
 
   return {
     id: slug,
@@ -498,6 +501,9 @@ function parseTeamMemberRaw(raw, slug) {
     keywords,
     enrollmentYear,
     graduationYear,
+    mastersEnrollmentYear,
+    mastersGraduationYear,
+    nextDestination,
   };
 }
 
@@ -1777,29 +1783,65 @@ function PublicationsPage({ items, ui, links }) {
   );
 }
 
+function buildMemberMetaTags(member) {
+  const tags = [];
+  const hasMastersTimeline = Number.isFinite(member.mastersEnrollmentYear);
+
+  if (hasMastersTimeline) {
+    const mastersEnd = Number.isFinite(member.mastersGraduationYear)
+      ? member.mastersGraduationYear
+      : "";
+    tags.push({ label: `MSc ${member.mastersEnrollmentYear}–${mastersEnd}`, kind: "timeline" });
+  }
+
+  if (Number.isFinite(member.enrollmentYear)) {
+    const end = Number.isFinite(member.graduationYear) ? member.graduationYear : "";
+    const degreePrefix = hasMastersTimeline && member.role === "PhD Student" ? "PhD " : "";
+    tags.push({ label: `${degreePrefix}${member.enrollmentYear}–${end}`, kind: "timeline" });
+  }
+
+  if (member.nextDestination) {
+    tags.push({ label: `→ ${member.nextDestination}`, kind: "destination" });
+  }
+
+  return tags;
+}
+
 function TeamMemberGrid({ members }) {
   return (
     <div className="team-fellows__grid">
-      {members.map((member) => (
-        <article className="team-fellow-card" key={member.id}>
-          <div className="team-fellow-card__image-wrap">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="team-fellow-card__image"
-              style={
-                member.id === "dingxian-huang"
-                  ? { objectPosition: "50% 42%" }
-                  : undefined
-              }
-            />
-          </div>
-          <h5>{member.name}</h5>
-          {member.nameCn ? <p className="team-fellow-card__name-cn">{member.nameCn}</p> : null}
-          <p className="team-fellow-card__role">{member.interest}</p>
-          <div className="team-fellow-card__bio-wrap" data-bio={member.bioLong} aria-label="Bio preview area" />
-        </article>
-      ))}
+      {members.map((member) => {
+        const metaTags = buildMemberMetaTags(member);
+        return (
+          <article className="team-fellow-card" key={member.id}>
+            <div className="team-fellow-card__image-wrap">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="team-fellow-card__image"
+                style={
+                  member.id === "dingxian-huang"
+                    ? { objectPosition: "50% 42%" }
+                    : undefined
+                }
+              />
+            </div>
+            <h5>{member.name}</h5>
+            {member.nameCn ? <p className="team-fellow-card__name-cn">{member.nameCn}</p> : null}
+            {metaTags.length ? (
+              <div className="team-fellow-card__meta" aria-label="Member timeline and destination">
+                {metaTags.map((tag) => (
+                  <span key={`${tag.kind}-${tag.label}`} data-kind={tag.kind}>
+                    {tag.label}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+            <p className="team-fellow-card__role">{member.interest}</p>
+            <div className="team-fellow-card__bio-wrap" data-bio={member.bioLong} aria-label="Bio preview area" />
+          </article>
+        );
+      })}
     </div>
   );
 }
