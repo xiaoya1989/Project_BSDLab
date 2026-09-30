@@ -4,14 +4,16 @@
     "role":  "PHD STUDENT",
     "program":  "Neuroscience",
     "enrollment_year":  2026,
+    "masters_enrollment_year":  2023,
+    "masters_graduation_year":  2026,
     "email":  "hdxstart2023@hotmail.com",
     "keywords":  [
                      "Neural Oscillations",
                      "Perception",
                      "EEG"
                  ],
-    "bio_short":  "PhD student studying neural oscillations and multisensory perception using EEG.",
-    "bio_long":  "I am a PhD student in neuroscience, focusing on neural oscillations and their role in perception. My research uses EEG to investigate multisensory integration, particularly in audiotactile illusions. I am interested in how brain rhythms shape perceptual experience.",
+    "bio_short":  "PhD student studying neural oscillations and multisensory perception after completing master's training at BSD Lab (2023–2026).",
+    "bio_long":  "I completed my master's training at BSD Lab from 2023 to 2026 and began my PhD studies in neuroscience in 2026. My research focuses on neural oscillations and their role in perception, using EEG to investigate multisensory integration, particularly in audiotactile illusions. I am interested in how brain rhythms shape perceptual experience.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",
