@@ -1,7 +1,7 @@
 ﻿{
     "name":  "Yitong Zeng",
     "name_cn":  "曾奕彤",
-    "role":  "MASTER STUDENT",
+    "role":  "ALUMNI",
     "program":  "Fundamental Psychology",
     "enrollment_year":  2023,
     "graduation_year":  2026,
@@ -13,8 +13,8 @@
                      "iEEG",
                      "Motor Timing"
                  ],
-    "bio_short":  "Researching neural oscillations and their role in time perception and motor timing.",
-    "bio_long":  "Yitong Zeng is a Master\u0027s student in Fundamental Psychology at South China Normal University. Her research focuses on the role of neural oscillations, particularly beta frequency dynamics, in subjective time perception and motor timing. She has experience with EEG, iEEG, and non-invasive brain stimulation (tACS), combining electrophysiology and behavioral approaches to investigate timing mechanisms in the human brain.",
+    "bio_short":  "BSD Lab alum continuing her research training at the University of Bologna under Prof. Vincenzo Romei.",
+    "bio_long":  "Yitong Zeng completed her master's training in Fundamental Psychology at South China Normal University, studying neural oscillations in time perception and motor timing with EEG, iEEG, and non-invasive brain stimulation. She is continuing her research training at the University of Bologna under the supervision of Prof. Vincenzo Romei.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",

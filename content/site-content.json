@@ -113,7 +113,8 @@
         "kicker": "The People",
         "title": "Research Team",
         "subtitle": "A collaborative group of neuroscientists, engineers, and mathematicians dedicated to decoding the brain's dynamic states.",
-        "members": "Lab Members"
+        "members": "Current Members",
+        "alumni": "Alumni"
       },
       "footer": {
         "publications": "Publications",
@@ -197,7 +198,8 @@
         "kicker": "团队成员",
         "title": "研究团队",
         "subtitle": "我们由神经科学、工程与计算背景成员组成，协同探索脑状态动力学机制。",
-        "members": "实验室成员"
+        "members": "在读成员",
+        "alumni": "毕业成员"
       },
       "footer": {
         "publications": "论文发表",

@@ -1,7 +1,7 @@
 ﻿{
     "name":  "Shengpei Zhao",
     "name_cn":  "赵晟培",
-    "role":  "MASTER STUDENT",
+    "role":  "ALUMNI",
     "program":  "Music Psychology",
     "enrollment_year":  2023,
     "graduation_year":  2026,
@@ -11,8 +11,8 @@
                      "Emotion",
                      "iEEG"
                  ],
-    "bio_short":  "A beginner in the field of music and brain relationship.",
-    "bio_long":  "Graduated from SCNU with a bachelor\u0027s degree. Master\u0027s candidate. A study on neuro representation of music emotion is in progress.",
+    "bio_short":  "BSD Lab alum whose master's research focused on the neural representation of musical emotion.",
+    "bio_long":  "Shengpei Zhao completed a master's degree at South China Normal University. The research focused on the neural representation of musical emotion using intracranial electrophysiology.",
     "links":  {
                   "google_scholar":  "",
                   "personal_website":  "",

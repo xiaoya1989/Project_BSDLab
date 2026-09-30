@@ -110,6 +110,8 @@ git status
 - `POSTDOCTORAL RESEARCHER`
 - `ALUMNI`
 
+将 `role` 设置为 `ALUMNI` 后，该成员会自动从“在读成员 / Current Members”移动到单独的“毕业成员 / Alumni”分组。
+
 ### 添加新成员
 
 1. 在 `team_members/` 新建英文小写目录，例如 `lin-zhang/`。
