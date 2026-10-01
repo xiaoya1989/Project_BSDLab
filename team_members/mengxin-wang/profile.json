@@ -1,0 +1,23 @@
+{
+  "name": "Mengxin Wang",
+  "name_cn": "王梦馨",
+  "role": "MASTER STUDENT",
+  "program": "",
+  "enrollment_year": 2026,
+  "graduation_year": 2029,
+  "next_destination": "",
+  "email": "cozzzzi14@gmail.com",
+  "keywords": [
+    "Auditory perception",
+    "Neural oscillations",
+    "Psychophysics",
+    "Neural modulation"
+  ],
+  "bio_short": "Research on temporal dynamics and neural oscillatory mechanisms underlying auditory perception.",
+  "bio_long": "My research focuses on the temporal dynamics and neural oscillatory mechanisms underlying auditory perception. I am particularly interested in how ongoing brain oscillations influence the perception of auditory stimuli and behavioral performance, and how these relationships can be investigated using psychophysical experiments and neural modulation techniques. My current work also involves individualized perceptual threshold calibration, precise stimulus presentation, and the development and optimization of experimental hardware systems.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "cozwang"
+  }
+}
