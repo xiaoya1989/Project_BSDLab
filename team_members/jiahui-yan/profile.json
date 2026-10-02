@@ -1,0 +1,23 @@
+{
+  "name": "Jiahui Yan",
+  "name_cn": "闫嘉慧",
+  "role": "MASTER STUDENT",
+  "program": "Cognitive Neuroscience",
+  "enrollment_year": 2026,
+  "graduation_year": 2029,
+  "next_destination": "",
+  "email": "1512408681@qq.com",
+  "keywords": [
+    "Cognitive neuroscience",
+    "sEEG",
+    "Cortico-cortical evoked potentials",
+    "Brain network dynamics"
+  ],
+  "bio_short": "Research on information transmission and large-scale brain network dynamics underlying human cognition.",
+  "bio_long": "I'm a student at South China Normal University. My current work focuses on cognitive neuroscience, studying information transmission and large-scale brain network dynamics using sEEG and cortico-cortical evoked potentials, aiming to uncover the neural mechanisms underlying human cognition.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/Yano-xion"
+  }
+}

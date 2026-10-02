@@ -1,0 +1,23 @@
+{
+  "name": "Jinyu Li",
+  "name_cn": "李谨余",
+  "role": "MASTER STUDENT",
+  "program": "Applied Psychology",
+  "enrollment_year": 2026,
+  "graduation_year": 2028,
+  "next_destination": "",
+  "email": "lishwen_@outlook.com",
+  "keywords": [
+    "Ketamine",
+    "EEG",
+    "Antidepressant mechanisms",
+    "Clinical intervention"
+  ],
+  "bio_short": "Research on ketamine, EEG, and the neural mechanisms underlying rapid antidepressant effects.",
+  "bio_long": "I am a first-year master's student in the School of Psychology at South China Normal University, majoring in Applied Psychology. My research focuses on ketamine, exploring its effects on brain activity through EEG data analysis. I aim to apply these approaches to better understand the neural mechanisms underlying ketamine's rapid antidepressant effects and develop potential applications in clinical intervention and treatment.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/lishwen"
+  }
+}

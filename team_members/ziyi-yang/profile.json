@@ -1,0 +1,23 @@
+{
+  "name": "Ziyi Yang",
+  "name_cn": "杨子艺",
+  "role": "MASTER STUDENT",
+  "program": "Cognitive Neuroscience",
+  "enrollment_year": 2026,
+  "graduation_year": 2029,
+  "next_destination": "",
+  "email": "yangzyi1729@gmail.com",
+  "keywords": [
+    "Cognitive neuroscience",
+    "sEEG",
+    "Neural oscillations",
+    "Information transmission"
+  ],
+  "bio_short": "Research on neural oscillations and dynamic information transmission across brain regions and functional hierarchies.",
+  "bio_long": "I am a postgraduate student in Cognitive Neuroscience, primarily using sEEG to investigate how neural oscillations propagate across brain regions and functional hierarchies. My work examines the functional significance of these propagation patterns and the dynamic mechanisms of information transmission in the brain.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/Y0Yzy"
+  }
+}

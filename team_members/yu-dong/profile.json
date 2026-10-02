@@ -1,0 +1,23 @@
+{
+  "name": "Yu Dong",
+  "name_cn": "董宇",
+  "role": "MASTER STUDENT",
+  "program": "Cognitive Neuroscience",
+  "enrollment_year": 2026,
+  "graduation_year": 2028,
+  "next_destination": "",
+  "email": "a15324062683@gmail.com",
+  "keywords": [
+    "Interhemispheric information transfer",
+    "Neural oscillations",
+    "Temporal perception",
+    "Perceptual bias"
+  ],
+  "bio_short": "Research on interhemispheric neural dynamics, neural oscillations, and temporal perception.",
+  "bio_long": "I am interested in interhemispheric information transfer, neural oscillations, and temporal perception. My research mainly focuses on the neural dynamics of interhemispheric communication and their effects on temporal perception and perceptual bias.",
+  "links": {
+    "google_scholar": "",
+    "personal_website": "",
+    "github": "https://github.com/iamdongyu"
+  }
+}
